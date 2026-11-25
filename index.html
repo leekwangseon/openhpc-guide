@@ -4,14 +4,24 @@
 <style>
 :root{--navy:#132b45;--ink:#192c3e;--blue:#096baf;--line:#dce3eb;--muted:#536678}
 *{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f4f7fb;font:16px/1.8 system-ui,-apple-system,"Malgun Gothic",sans-serif}
-header{background:var(--navy);color:white;padding:27px 38px}header strong{display:block;font-size:25px;letter-spacing:-.6px}header p{margin:4px 0 0;color:#cbd9e9;font-size:14px}
+header{background:var(--navy);color:white;padding:27px 38px}header strong{display:block;font-size:25px;letter-spacing:-.6px}header p{margin:4px 0 0;color:#cbd9e9;font-size:14px}.chapter-toc{border:1px solid var(--line);border-radius:7px;padding:12px 18px;margin:18px 0 28px;background:#f8fafc}.chapter-toc summary{cursor:pointer;font-weight:600}.chapter-toc ul{font-size:14px}
 .layout{display:grid;grid-template-columns:220px minmax(0,1fr);max-width:1360px;margin:auto}nav{padding:28px 18px;position:sticky;top:0;height:100vh;overflow:auto}nav a{display:block;padding:9px 14px;margin:4px 0;border-radius:7px;text-decoration:none;color:var(--ink)}nav a[aria-current="page"]{background:var(--navy);color:#fff}nav button{margin:20px 12px;padding:8px 12px;background:white;border:1px solid var(--line);border-radius:5px;cursor:pointer}
 main{background:white;padding:30px 46px 70px;min-width:0}.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 28px}.card{display:block;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:22px;color:var(--ink);background:#f8fafc}.card:hover{border-color:var(--blue);background:#eef6fc}.card strong{display:block;font-size:19px;margin-bottom:8px}.card span{font-size:14px;color:var(--muted)}.page{margin-bottom:60px}body.js .page{display:none}body.js .page.active{display:block}h1{font-size:29px;line-height:1.4;margin:8px 0 24px}h2{font-size:22px;margin:34px 0 14px;padding-top:12px;border-top:1px solid var(--line)}h3{font-size:18px;margin-top:28px}p{margin:13px 0}a{color:var(--blue);text-underline-offset:3px}li{margin:6px 0}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:10px 12px;vertical-align:top;text-align:left}th{background:#eef3f8}code{font:14px/1.6 Consolas,monospace;background:#eef3f8;border-radius:3px;padding:2px 4px}pre{background:#122537;color:#eff6ff;padding:18px 20px;border-radius:8px;overflow:auto;font:14px/1.7 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}footer{margin-top:36px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
 @media(max-width:800px){header{padding:22px}header strong{font-size:21px}.layout{display:block}.cards{grid-template-columns:1fr}nav{position:static;height:auto;padding:12px;display:flex;flex-wrap:wrap}nav a{padding:5px 10px;font-size:14px}nav button{margin:4px 10px}main{padding:22px}h1{font-size:25px}}
 @media print{body{background:white;font-size:10pt;color:#111}header{background:white;color:#111;padding:0 0 16px}header p{color:#444}.layout{display:block}nav{display:none}main{padding:0}body.js .page{display:block!important;break-before:page}.page:first-child{break-before:auto}h1,h2,h3{break-after:avoid}pre{color:#111;background:#f3f3f3;border:1px solid #ccc;font-size:9pt}table{display:table;font-size:9pt}tr{break-inside:avoid}a{color:#111}footer{display:none}@page{size:A4;margin:18mm}}
 </style></head><body>
 <header><strong>클러스터 사용 안내</strong><p>접속부터 계산 결과 확인까지, 필요한 순서대로 시작하세요.</p></header>
-<div class="layout"><nav aria-label="사용 안내"><a href="#overview" data-section="overview">처음 사용하기</a><a href="#access" data-section="access">접속하기</a><a href="#files" data-section="files">파일 주고받기</a><a href="#run" data-section="run">계산 실행</a><a href="#environment" data-section="environment">실행 환경</a><a href="#basics" data-section="basics">서버와 저장 공간</a><a href="#optional" data-section="optional">GUI와 선택 기능</a><a href="#help" data-section="help">문제 해결·문의</a><button onclick="window.print()" type="button">사용 안내 인쇄</button></nav><main><section id="overview" class="page" aria-label="처음 사용하기"><h1 id="overview-_1">클러스터 사용 안내</h1>
+<div class="layout"><nav aria-label="사용 안내"><a href="#overview" data-section="overview">처음 사용하기</a><a href="#access" data-section="access">접속하기</a><a href="#files" data-section="files">파일 주고받기</a><a href="#run" data-section="run">계산 실행</a><a href="#environment" data-section="environment">실행 환경</a><a href="#basics" data-section="basics">서버와 저장 공간</a><a href="#terms" data-section="terms">개념과 기본 명령</a><a href="#conda" data-section="conda">Conda·Python</a><a href="#modules" data-section="modules">Module 사용</a><a href="#docker" data-section="docker">Docker</a><a href="#apptainer" data-section="apptainer">Apptainer·Singularity</a><a href="#gpu" data-section="gpu">GPU·학습 실습</a><a href="#slurm" data-section="slurm">Slurm 상세 사용</a><a href="#optional" data-section="optional">GUI와 선택 기능</a><a href="#help" data-section="help">문제 해결·문의</a><button onclick="window.print()" type="button">사용 안내 인쇄</button></nav><main><section id="overview" class="page" aria-label="처음 사용하기"><h1 id="overview-_1">클러스터 사용 안내</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#overview-_1">클러스터 사용 안내</a><ul>
+<li><a href="#overview-_2">무엇을 하시겠어요?</a></li>
+<li><a href="#overview-_3">처음 사용한다면</a></li>
+<li><a href="#overview-_4">사용 전에 알아두세요</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
 <p>처음 접속하는 순간부터 계산 결과를 내려받을 때까지, 필요한 순서대로 안내합니다.</p>
 <h2 id="overview-_2">무엇을 하시겠어요?</h2>
 <div class="cards">
@@ -24,9 +34,9 @@ main{background:white;padding:30px 46px 70px;min-width:0}.cards{display:grid;gri
 <h2 id="overview-_3">처음 사용한다면</h2>
 <ol>
 <li>담당자에게 받은 <strong>접속 주소, 포트, 개인 계정</strong>을 준비합니다.</li>
-<li><a href="#access" data-section="access">접속 안내</a>에 따라 로그인하고 접속한 서버를 확인합니다.</li>
-<li><a href="#files" data-section="files">파일 안내</a>에 따라 작업 폴더에 입력 파일을 올립니다.</li>
-<li>사용할 계산 노드와 자원 범위를 확인한 뒤 <a href="#run" data-section="run">계산 안내</a>를 진행합니다.</li>
+<li><a href="#access">접속 안내</a>에 따라 로그인하고 접속한 서버를 확인합니다.</li>
+<li><a href="#files">파일 안내</a>에 따라 작업 폴더에 입력 파일을 올립니다.</li>
+<li>사용할 계산 노드와 자원 범위를 확인한 뒤 <a href="#run">계산 안내</a>를 진행합니다.</li>
 </ol>
 <h2 id="overview-_4">사용 전에 알아두세요</h2>
 <ul>
@@ -35,7 +45,24 @@ main{background:white;padding:30px 46px 70px;min-width:0}.cards{display:grid;gri
 <li><strong>결과는 지정된 저장 공간에 보관하세요.</strong> 임시 폴더는 재부팅이나 정리 작업으로 삭제될 수 있습니다.</li>
 </ul>
 <p>이 안내서는 여러 클러스터에서 공통으로 사용하는 방법을 설명합니다. 실제 주소·프로그램 경로·사용 정책은 장비 담당자가 전달한 안내를 확인해 주세요.</p></section>
-<section id="access" class="page" aria-label="접속하기"><h1 id="access-_1">접속하기</h1>
+<section id="access" class="page" aria-label="접속하기"><h1 id="access-_1">접속하기</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#access-_1">접속하기</a><ul>
+<li><a href="#access-pc">내 PC에서 실행</a></li>
+<li><a href="#access-_2">운영체제별 접속 준비</a><ul>
+<li><a href="#access-windows-mobaxterm-openssh">Windows: MobaXterm 또는 OpenSSH</a></li>
+<li><a href="#access-macos-terminal-xquartz">macOS: Terminal과 선택적 XQuartz</a></li>
+<li><a href="#access-linux-terminal">Linux: Terminal</a></li>
+</ul>
+</li>
+<li><a href="#access-gui">GUI 접속과 터널</a></li>
+<li><a href="#access-_3">접속한 서버에서 확인</a></li>
+<li><a href="#access-_4">자주 접속하는 서버 저장</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
 <p>담당자에게 받은 <strong>서버 주소·SSH 포트·개인 계정</strong>을 준비합니다. 아래 명령의 <code>YOUR_LOGIN_HOST</code>, <code>YOUR_SSH_PORT</code>, <code>YOUR_USER</code>를 각각 그 값으로 바꿔 입력하세요. 값을 받지 못했다면 먼저 담당자에게 문의해 주세요.</p>
 <h3 id="access-pc">내 PC에서 실행</h3>
 <p>Windows는 PowerShell/OpenSSH 또는 조직에서 허용한 SSH 클라이언트를, macOS·Linux는 터미널을 사용할 수 있습니다. 클라이언트별 기능·라이선스는 해당 배포처에서 확인합니다.</p>
@@ -44,13 +71,53 @@ main{background:white;padding:30px 46px 70px;min-width:0}.cards{display:grid;gri
 <p>처음 접속할 때 표시되는 호스트 키 지문은 관리자에게 받은 지문과 비교합니다. 호스트 키가 변경되었다는 경고가 나오면 재설치·교체 여부를 확인합니다. 경고를 우회하거나 기존 키를 무조건 삭제하지 않습니다.</p>
 <p>비밀번호 입력 중 화면에 글자가 보이지 않는 것은 정상입니다. 비밀번호·다중 인증·키 인증 중 현장에서 지정한 방법을 사용합니다.</p>
 <p>중계 서버·VPN이 필요한 현장에서는 관리자에게 받은 전용 접속 절차를 사용합니다. <strong>중계 서버의 <code>127.0.0.1</code>과 내 PC의 <code>127.0.0.1</code>은 다른 대상입니다.</strong> 리버스 유지보수 통로를 일반 사용자 접속 경로로 임의 사용하지 않습니다.</p>
-<h3 id="access-_2">접속한 서버에서 확인</h3>
+<h2 id="access-_2">운영체제별 접속 준비</h2>
+<h3 id="access-windows-mobaxterm-openssh">Windows: MobaXterm 또는 OpenSSH</h3>
+<p>MobaXterm을 사용하는 경우 Session → SSH에서 Remote host, Specify username, Port를 입력합니다. 터미널의 SSH 명령으로도 접속할 수 있습니다. SFTP 패널은 세션·인증 설정에 따라 제공되며 패널에서 파일을 올리기 전에 대상 폴더를 확인합니다. 조직 정책과 해당 에디션의 사용 조건을 확인합니다.</p>
+<p>PowerShell의 OpenSSH는 <code>ssh -V</code>로 설치 여부를 확인할 수 있습니다. GUI 화면 전달이 필요하면 별도 X 서버가 필요하며, MobaXterm에서는 내장 X 서버 기능을 사용할 수 있습니다.</p>
+<p>Windows 사용자명·경로에 한글이 있어 클라이언트 오류가 발생하면 오류 메시지와 버전을 확인하고 지원되는 최신 버전·작업 경로 설정을 담당자에게 문의합니다. 기존 <code>.bashrc</code>를 덮어쓰거나 시스템 ssh_config를 무조건 치환하지 않습니다.</p>
+<h3 id="access-macos-terminal-xquartz">macOS: Terminal과 선택적 XQuartz</h3>
+<p>터미널의 SSH로 접속할 수 있습니다. 텍스트 접속에는 XQuartz가 필요하지 않습니다. X11 GUI를 사용하는 경우 <a href="https://www.xquartz.org/">XQuartz</a>를 설치·실행하고 새 터미널에서 <code>ssh -X</code>를 사용합니다. 필요 시 로그아웃 후 다시 로그인하는 등 설치 안내를 따릅니다.</p>
+<h3 id="access-linux-terminal">Linux: Terminal</h3>
+<p>SSH 클라이언트가 있는지 <code>ssh -V</code>로 확인합니다. X11 전달에는 로컬 X 서버와 서버의 전달 허용·인증 도구 등이 필요합니다. headless 환경에서 별도 준비 없이 GUI가 열린다고 가정하지 않습니다.</p>
+<h2 id="access-gui">GUI 접속과 터널</h2>
+<pre><code class="language-bash">ssh -X -p YOUR_SSH_PORT YOUR_USER@YOUR_LOGIN_HOST
+</code></pre>
+<p><code>-X</code>는 X11 전달, <code>-C</code>는 압축, <code>-Y</code>는 신뢰하는 X11 전달 옵션입니다. 일반 접속에 모두 필요하지는 않습니다. 신뢰하는 서버에서 제품이 요구할 때만 관리자에게 <code>-Y</code> 사용을 확인합니다. GUI가 안 열리면 <code>echo "$DISPLAY"</code>와 X 서버·전달 설정을 확인하고 <a href="#optional">GUI 안내</a>를 참고합니다.</p>
+<p>승인된 중계 서버를 거치는 ProxyJump 형태는 다음과 같습니다. 중계 SSH 포트와 최종 SSH 포트는 별개입니다.</p>
+<pre><code class="language-bash">ssh -J YOUR_JUMP_USER@YOUR_JUMP_HOST:YOUR_JUMP_PORT \
+  -p YOUR_TARGET_PORT YOUR_USER@YOUR_TARGET_HOST
+</code></pre>
+<p>리버스 터널 유지보수 포트를 사용하는 현장은 별도 안내를 받습니다. 접속 편의를 위해 에이전트 전달이나 호스트 키 검사를 일괄 해제하지 않습니다.</p>
+<h2 id="access-_3">접속한 서버에서 확인</h2>
 <pre><code class="language-bash">hostname
 whoami
 pwd
 </code></pre>
-<p>현장 안내서의 로그인 노드 이름과 개인 계정이 표시되는지 확인합니다. 계산 노드 접속이 별도로 필요한 경우에만 승인된 방식으로 이동합니다.</p></section>
-<section id="files" class="page" aria-label="파일 주고받기"><h1 id="files-_1">파일 주고받기</h1>
+<p>현장 안내서의 로그인 노드 이름과 개인 계정이 표시되는지 확인합니다. 계산 노드 접속이 별도로 필요한 경우에만 승인된 방식으로 이동합니다.</p>
+<p>추가로 <code>w</code>, <code>uptime</code>, <code>free -h</code>, <code>df -h .</code>로 상황을 확인할 수 있습니다. <code>nvidia-smi</code>는 GPU와 드라이버가 제공된 노드에서 사용합니다. 이 명령들이 사용 예약을 대신하지는 않습니다.</p>
+<h2 id="access-_4">자주 접속하는 서버 저장</h2>
+<p>개인 PC의 <code>~/.ssh/config</code>에 별칭을 등록할 수 있습니다. Windows OpenSSH는 보통 사용자 프로필의 <code>.ssh/config</code>를 사용합니다.</p>
+<pre><code class="language-text">Host research-cluster
+    HostName YOUR_LOGIN_HOST
+    User YOUR_USER
+    Port YOUR_SSH_PORT
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+</code></pre>
+<p>실제 값으로 바꾼 후 <code>ssh research-cluster</code>로 접속합니다. 설정 파일에는 비밀번호를 넣지 않습니다. 연결 확인 옵션은 죽은 연결 감지에 도움이 되지만 실행 작업을 자동 복구하지는 않습니다.</p></section>
+<section id="files" class="page" aria-label="파일 주고받기"><h1 id="files-_1">파일 주고받기</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#files-_1">파일 주고받기</a><ul>
+<li><a href="#files-_2">폴더 전체 전송</a></li>
+<li><a href="#files-sftp">SFTP에서 파일 전송</a></li>
+<li><a href="#files-rsync">rsync로 반복·대용량 전송</a></li>
+<li><a href="#files-_3">전송 결과 검증과 권한</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
 <p>다음 예제는 HOME이 작업에 허용된 공유 경로일 때만 사용합니다. 별도 프로젝트 경로가 있으면 그 경로에서 시작합니다.</p>
 <pre><code class="language-bash">mkdir -p &quot;$HOME/work/first-test&quot;
 cd &quot;$HOME/work/first-test&quot;
@@ -67,8 +134,44 @@ df -h .
 <p>대용량·다수 파일은 양쪽에 rsync가 제공될 때 사용할 수 있습니다. 재실행 시 이미 전송된 내용을 활용하며 <code>--partial</code>은 중단된 부분 파일을 보관합니다. 대상 경로와 덮어쓰기 여부를 먼저 확인합니다.</p>
 <pre><code class="language-bash">rsync -av --partial --progress -e 'ssh -p YOUR_SSH_PORT' ./inputs/ YOUR_USER@YOUR_LOGIN_HOST:YOUR_USER_HOME/work/first-test/inputs/
 </code></pre>
-<p>이 예제에는 파일 삭제 옵션을 넣지 않았습니다. 중요한 결과는 현장 백업·보관 정책에 따라 별도 보존합니다.</p></section>
-<section id="run" class="page" aria-label="계산 실행"><h1 id="run-_1">계산 실행과 결과 확인</h1>
+<p>이 예제에는 파일 삭제 옵션을 넣지 않았습니다. 중요한 결과는 현장 백업·보관 정책에 따라 별도 보존합니다.</p>
+<h2 id="files-_2">폴더 전체 전송</h2>
+<p>SCP는 <code>-r</code>로 폴더를 전송합니다. 현재 PC에서 실행하는 예입니다.</p>
+<pre><code class="language-bash">scp -r -P YOUR_SSH_PORT ./inputs YOUR_USER@YOUR_LOGIN_HOST:YOUR_USER_HOME/work/first-test/
+</code></pre>
+<p>서버 간 직접 전송은 양쪽 인증과 통신 경로가 필요합니다. 어떤 장비를 경유하는지는 SCP 버전·옵션에 따라 달라지므로 승인된 전송 방법을 확인합니다. 비밀키를 임시로 여러 서버에 복사하지 않습니다.</p>
+<h2 id="files-sftp">SFTP에서 파일 전송</h2>
+<pre><code class="language-bash">sftp -P YOUR_SSH_PORT YOUR_USER@YOUR_LOGIN_HOST
+</code></pre>
+<p>접속 후 <code>pwd</code>·<code>ls</code>는 원격 경로를, <code>lpwd</code>·<code>lls</code>는 내 PC 경로를 확인합니다. <code>cd</code>·<code>lcd</code>로 각각 이동하고 <code>put input.dat</code>, <code>get result.dat</code>로 전송합니다. 종료는 <code>bye</code>입니다. GUI에서는 서버·포트·계정·인증 방식을 동일하게 지정합니다.</p>
+<h2 id="files-rsync">rsync로 반복·대용량 전송</h2>
+<p><code>source/</code>는 폴더 안의 내용, <code>source</code>는 폴더 자체를 복사하는 차이가 있습니다. 전송 전 경로를 미리 확인합니다.</p>
+<pre><code class="language-bash">rsync -av --dry-run -e 'ssh -p YOUR_SSH_PORT' ./inputs/ \
+  YOUR_USER@YOUR_LOGIN_HOST:YOUR_USER_HOME/work/first-test/inputs/
+</code></pre>
+<p>출력을 확인한 후 <code>--dry-run</code>을 빼고 <code>--partial --progress</code>를 추가해 전송합니다. 이미 압축된 데이터는 <code>-z</code> 압축이 도움이 되지 않을 수 있습니다. rsync의 재실행은 이미 같은 파일을 건너뛰거나 차이를 활용할 수 있으나, 모든 프로그램·모든 파일 형식에서 무조건 이어받기를 보장하는 표현으로 이해하지 않습니다.</p>
+<p><code>--delete</code>는 대상의 파일을 제거할 수 있으므로 일상 복사 예제에는 사용하지 않습니다. 입력·결과 경로를 뒤집거나 공유 폴더 루트를 대상으로 잡지 않습니다.</p>
+<h2 id="files-_3">전송 결과 검증과 권한</h2>
+<pre><code class="language-bash">ls -lh input.dat
+sha256sum input.dat
+</code></pre>
+<p>중요 파일은 전송 전후 체크섬을 비교합니다. 파일 개수·크기뿐 아니라 프로그램에서 읽히는지도 확인합니다. <code>Permission denied</code>는 파일·상위 폴더 권한과 대상 계정을, 용량 오류는 <code>df</code>·quota를 확인합니다. 권한을 일괄 777로 바꾸지 않습니다. 대규모 작은 파일은 저장소 부하를 고려해 담당자와 묶음 전송 방식을 협의합니다.</p></section>
+<section id="run" class="page" aria-label="계산 실행"><h1 id="run-_1">계산 실행과 결과 확인</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#run-_1">계산 실행과 결과 확인</a><ul>
+<li><a href="#run-_2">직접 실행</a><ul>
+<li><a href="#run-_3">실행 전</a></li>
+<li><a href="#run-_4">계산 시작</a></li>
+<li><a href="#run-_5">접속 종료 후에도 유지해야 하는 작업</a></li>
+<li><a href="#run-_6">진행 확인과 중지</a></li>
+</ul>
+</li>
+<li><a href="#slurm">Slurm으로 작업 제출</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
 <p>담당자에게 안내받은 실행 방식을 사용하세요. 직접 실행하는 환경은 첫 번째 절을, Slurm을 사용하는 환경은 두 번째 절을 확인합니다.</p>
 <h2 id="run-_2">직접 실행</h2>
 <p>이 절차는 <strong>스케줄러를 통하지 않는 실행이 허용되고 노드 직접 접속 권한이 제공된 경우</strong>에만 적용합니다. ANSYS 등 제품 자체의 원격 실행 도구를 사용하는 현장은 제품별 안내를 우선합니다.</p>
@@ -102,7 +205,8 @@ tail -f run.log
 </code></pre>
 <p><code>tail -f</code>는 <code>Ctrl+c</code>로 종료해도 계산이 중단되지 않습니다. 계산 자체는 제품의 정상 종료·체크포인트 저장 기능을 먼저 사용합니다. 프로세스를 종료해야 하면 본인 PID와 작업을 확인한 뒤 <code>kill -TERM PID</code>를 사용합니다. MPI 작업은 여러 프로세스를 만들 수 있으므로 실행기 또는 제품이 안내한 종료 방법을 따릅니다. <code>killall</code>, 다른 사용자의 PID, 강제 종료를 일반 절차로 사용하지 않습니다.</p>
 <h2 id="run-slurm">Slurm으로 작업 제출</h2>
-<p>Slurm을 사용하지 않는 현장은 이 절을 건너뜁니다. 파티션·제한 정책은 현장 안내서에 따릅니다.</p>
+<p>아래는 첫 작업용 요약입니다. CPU·메모리·GPU 요청, Conda·컨테이너 배치 작업, MPI, 우선순위·시작 예상시간은 <a href="#slurm">Slurm 상세 사용</a>을 확인하세요.
+Slurm을 사용하지 않는 현장은 이 절을 건너뜁니다. 파티션·제한 정책은 현장 안내서에 따릅니다.</p>
 <pre><code class="language-bash">sinfo
 squeue -u &quot;$USER&quot;
 </code></pre>
@@ -123,7 +227,53 @@ sbatch -p YOUR_PARTITION hello.slurm
 <p>제출 응답의 Job ID를 기록하고 <code>squeue -u "$USER"</code>로 확인합니다. 완료 후 현재 폴더의 <code>hello-작업번호.out</code>을 확인합니다. 취소는 <code>scancel YOUR_JOB_ID</code>를 사용합니다.</p>
 <p><code>srun hostname</code> 같은 명령은 실행할 명령이 끝나면 종료됩니다. <code>srun --pty bash</code>로 대화형 셸을 시작한 경우 셸을 <code>exit</code>로 끝내야 합니다. 작업 목록에서 사라졌다는 것만으로 계산 성공을 판단하지 말고 출력·오류 로그와 결과를 확인합니다. <code>sacct</code>는 회계 기능이 구성된 경우에 사용합니다.</p></section>
 <section id="environment" class="page" aria-label="실행 환경"><h1 id="environment-_1">실행 환경 준비</h1>
-<p>Module이 제공되는 현장에서만 사용합니다.</p>
+<p>프로그램을 제공받은 방식에 따라 아래 상세 안내를 선택하세요. 모든 기능이 모든 클러스터에 설치되어 있는 것은 아닙니다.</p>
+<table>
+<thead>
+<tr>
+<th>제공 방식</th>
+<th>상세 안내</th>
+<th>주요 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>개인 Python 환경</td>
+<td><a href="#conda">Conda·Python</a></td>
+<td>설치 확인, 환경 생성, GPU 런타임, 스크립트, 저장·복원</td>
+</tr>
+<tr>
+<td>공유 프로그램</td>
+<td><a href="#modules">Module</a></td>
+<td>검색, 불러오기, 버전 전환, 환경 확인</td>
+</tr>
+<tr>
+<td>Docker 이미지</td>
+<td><a href="#docker">Docker</a></td>
+<td>이미지·컨테이너·볼륨·GPU·빌드·정리</td>
+</tr>
+<tr>
+<td>HPC 컨테이너</td>
+<td><a href="#apptainer">Apptainer·Singularity</a></td>
+<td>SIF·바인드·GPU·빌드·Jupyter</td>
+</tr>
+<tr>
+<td>GPU 시험</td>
+<td><a href="#gpu">GPU·학습 실습</a></td>
+<td>장치 확인, 행렬 계산, 짧은 GAN 학습</td>
+</tr>
+<tr>
+<td>자원 배정</td>
+<td><a href="#slurm">Slurm 상세 사용</a></td>
+<td>대화형·배치·MPI·GPU·정책 조회</td>
+</tr>
+<tr>
+<td>Module이 제공되는 현장에서만 사용합니다.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <pre><code class="language-bash">module list
 module avail
 module show YOUR_MODULE
@@ -131,7 +281,17 @@ module load YOUR_MODULE
 </code></pre>
 <p><code>YOUR_MODULE</code>은 실제 목록에 있는 프로그램/버전으로 바꿉니다. 작업 기록에 프로그램 버전과 모듈 목록을 남깁니다. <code>module purge</code>는 현재 환경을 모두 내리므로 실행 중인 작업의 환경 설정을 임의로 바꾸지 않습니다.</p>
 <p>Conda·Python·컨테이너는 제공되는 경우에만 사용합니다. 오래된 예제의 Python·CUDA·딥러닝 버전을 그대로 설치하지 말고 프로젝트 요구 버전과 지원 조합을 확인합니다. 시스템 Python을 덮어쓰거나 일반 사용자 작업에 <code>sudo pip</code>를 사용하지 않습니다.</p></section>
-<section id="basics" class="page" aria-label="서버와 저장 공간"><h1 id="basics-_1">서버와 저장 공간 이해하기</h1>
+<section id="basics" class="page" aria-label="서버와 저장 공간"><h1 id="basics-_1">서버와 저장 공간 이해하기</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#basics-_1">서버와 저장 공간 이해하기</a><ul>
+<li><a href="#basics-_2">어느 서버에서 무엇을 하나요?</a></li>
+<li><a href="#basics-_3">파일을 어디에 두면 되나요?</a></li>
+<li><a href="#basics-_4">함께 사용하는 장비입니다</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
 <h2 id="basics-_2">어느 서버에서 무엇을 하나요?</h2>
 <table>
 <thead>
@@ -198,6 +358,814 @@ module load YOUR_MODULE
 <li>권한 오류가 나면 필요한 폴더 권한을 요청합니다. 공유 폴더 전체의 권한을 일괄 변경하지 않습니다.</li>
 <li>노드 재부팅·전원 조작·시스템 설정 변경은 담당자에게 요청합니다.</li>
 </ul></section>
+<section id="terms" class="page" aria-label="개념과 기본 명령"><h1 id="terms-_1">클러스터 개념과 명령어 읽기</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#terms-_1">클러스터 개념과 명령어 읽기</a><ul>
+<li><a href="#terms-_2">클러스터를 사용하는 이유</a></li>
+<li><a href="#terms-_3">기본 용어</a></li>
+<li><a href="#terms-bash">Bash 명령 읽기</a></li>
+<li><a href="#terms-_4">상황 확인 명령</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<h2 id="terms-_2">클러스터를 사용하는 이유</h2>
+<p>여러 서버의 실행 환경을 통일하고 여러 사용자가 계산 자원을 나누어 사용하기 위한 환경입니다. 관리 도구는 OS·계정·설정을 배포하고, 스케줄러는 사용하는 현장에서 자원을 배정합니다. 공유 저장소는 입력·결과·프로그램을 여러 노드가 같은 경로로 접근하게 합니다.</p>
+<p>로그인 노드는 접속·준비, 계산 노드는 계산, 관리 노드는 계정·부팅·서비스 운영을 담당합니다. 역할을 겸하는 장비도 있습니다. Ethernet과 InfiniBand 같은 통신망, NFS·병렬 파일시스템 같은 저장소, CPU·GPU·메모리의 구성은 현장마다 다릅니다.</p>
+<h2 id="terms-_3">기본 용어</h2>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSH / SCP / SFTP</td>
+<td>원격 접속 / SSH 기반 파일 복사 / 파일 전송 프로토콜</td>
+</tr>
+<tr>
+<td>X11 forwarding</td>
+<td>원격 GUI 화면을 내 PC의 X 서버로 전달</td>
+</tr>
+<tr>
+<td>HOME / 작업 경로</td>
+<td>개인 설정 공간 / 계산에 사용하는 폴더</td>
+</tr>
+<tr>
+<td>PATH</td>
+<td>명령 실행파일을 검색하는 경로 목록</td>
+</tr>
+<tr>
+<td>환경변수</td>
+<td>프로그램의 동작·경로·장치 선택 등에 쓰이는 값</td>
+</tr>
+<tr>
+<td>Module / Conda 환경</td>
+<td>공유 프로그램의 버전별 환경 / 프로젝트별 패키지 환경</td>
+</tr>
+<tr>
+<td>MPI</td>
+<td>여러 프로세스가 데이터를 주고받으며 계산하는 방식</td>
+</tr>
+<tr>
+<td>컨테이너</td>
+<td>호스트 커널을 공유하면서 실행 환경을 묶어 제공하는 방식</td>
+</tr>
+<tr>
+<td>Slurm / PBS</td>
+<td>작업 자원을 배정하는 스케줄러 제품. 동일 명령을 사용하지 않음</td>
+</tr>
+<tr>
+<td>Job / Step</td>
+<td>작업 / 작업 안에서 실행하는 단계</td>
+</tr>
+<tr>
+<td>Partition / Queue</td>
+<td>노드의 논리적 묶음 / 대기 작업 목록</td>
+</tr>
+<tr>
+<td>Account / Association</td>
+<td>Slurm의 프로젝트 단위 / 사용자·계정·클러스터 등의 연결</td>
+</tr>
+<tr>
+<td>QoS</td>
+<td>작업 우선순위·사용 제한 등에 적용하는 정책 묶음</td>
+</tr>
+<tr>
+<td>GRES / TRES</td>
+<td>GPU 등 일반 자원 / 사용량을 추적하는 자원 항목</td>
+</tr>
+<tr>
+<td>Fairshare / Backfill</td>
+<td>사용 이력에 따른 공정 배정 / 기존 예약을 지연시키지 않는 빈 시간 활용</td>
+</tr>
+</tbody>
+</table>
+<p>하드웨어 코어 수와 논리 CPU 수는 다를 수 있습니다. 병렬 프로세스 수와 프로세스당 스레드 수를 구분하고, 메모리·라이선스 제한까지 고려해 실행합니다.</p>
+<h2 id="terms-bash">Bash 명령 읽기</h2>
+<table>
+<thead>
+<tr>
+<th>표기</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~</code>, <code>$HOME</code></td>
+<td>내 홈 디렉터리</td>
+</tr>
+<tr>
+<td><code>$USER</code>, <code>${NAME}</code></td>
+<td>환경변수·셸 변수의 값</td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td>주석. <code>#SBATCH</code>는 배치 파일에서 Slurm 지시문</td>
+</tr>
+<tr>
+<td><code>&gt;</code> / <code>&gt;&gt;</code></td>
+<td>파일 덮어쓰기 / 파일 끝에 추가</td>
+</tr>
+<tr>
+<td><code>2&gt;&amp;1</code></td>
+<td>표준 오류를 표준 출력과 같은 대상으로 보냄</td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td>앞 명령의 출력을 다음 명령의 입력으로 전달</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code> / <code>\|\|</code></td>
+<td>앞 명령 성공 시 / 실패 시 다음 명령 실행</td>
+</tr>
+<tr>
+<td><code>;</code></td>
+<td>성공 여부와 무관하게 다음 명령 실행</td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>줄 끝에서 다음 줄과 이어서 실행. 뒤에 공백을 넣지 않음</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>백그라운드 실행. 로그아웃·재부팅 후 생존 보장은 아님</td>
+</tr>
+<tr>
+<td><code>'문자열'</code> / <code>"문자열"</code></td>
+<td>변수 확장 없이 그대로 / 변수 값을 확장하여 사용</td>
+</tr>
+</tbody>
+</table>
+<p><code>cat &gt; 파일 &lt;&lt;'EOF'</code>는 지정 문자열까지의 내용을 파일에 쓰며 내부의 <code>$변수</code>를 바로 확장하지 않습니다. <code>.bashrc</code>에 <code>&gt;</code>를 사용하면 기존 설정이 사라질 수 있습니다. 수정 전 사본을 보관하고 필요한 줄만 편집합니다.</p>
+<h2 id="terms-_4">상황 확인 명령</h2>
+<pre><code class="language-bash">hostname
+whoami
+id
+pwd
+ls -lh
+df -h .
+du -sh &quot;$HOME&quot;
+free -h
+uptime
+w
+</code></pre>
+<p><code>df</code>는 파일시스템 여유 공간, <code>du</code>는 디렉터리의 사용량입니다. 큰 공유 디렉터리의 재귀 탐색은 부하가 될 수 있습니다. quota는 파일시스템별 도구와 현장 정책을 확인합니다. <code>alias</code>로 만든 별칭은 다른 서버나 배치 스크립트에 없을 수 있으므로 표준 명령을 우선합니다.</p></section>
+<section id="conda" class="page" aria-label="Conda·Python"><h1 id="conda-conda-python">Conda와 Python 환경</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#conda-conda-python">Conda와 Python 환경</a><ul>
+<li><a href="#conda-1">1. 사용 가능 여부와 설치</a></li>
+<li><a href="#conda-2">2. 환경 생성·활성화·종료</a></li>
+<li><a href="#conda-3-tensorflow-cuda">3. TensorFlow와 CUDA 환경</a></li>
+<li><a href="#conda-4">4. 스크립트와 배치 실행</a></li>
+<li><a href="#conda-5">5. 환경 내보내기·복원·제거</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<h2 id="conda-1">1. 사용 가능 여부와 설치</h2>
+<p>이미 제공되는 Conda 모듈·설치본이 있는지 먼저 확인합니다. 없다면 담당자가 승인한 배포판·채널과 현재 라이선스 조건을 확인합니다. Anaconda Distribution과 Miniconda 등은 구성·배포 조건이 다릅니다.</p>
+<pre><code class="language-bash">command -v conda
+conda --version
+conda env list
+</code></pre>
+<p>직접 설치가 허용된 경우 <a href="https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html">공식 배포 안내</a>에서 CPU 아키텍처에 맞는 설치 스크립트와 체크섬을 확인합니다. 서버에 브라우저가 없으면 내 PC에서 링크를 확인해 내려받거나 파일을 전송합니다.</p>
+<pre><code class="language-bash">cd &quot;$HOME&quot;
+curl -fL 'YOUR_APPROVED_INSTALLER_URL' -o conda-installer.sh
+sha256sum conda-installer.sh
+bash conda-installer.sh
+</code></pre>
+<p>체크섬을 배포처의 값과 비교한 후 설치합니다. 관리자 승인 없이 root로 실행하지 않습니다. 초기화가 필요한 셸은 설치 안내에 따라 <code>conda init bash</code>를 적용하고 새 셸을 엽니다. 기존 <code>.bashrc</code>를 통째로 덮어쓰지 않습니다.</p>
+<pre><code class="language-bash">conda config --set auto_activate_base false
+conda info
+</code></pre>
+<p>Conda 자체 업데이트는 관리되는 공유 설치본인지 먼저 확인합니다. 개인 설치본에서 승인된 경우 <code>conda update -n base conda</code>를 사용하되, 작업 도중 환경을 바꾸지 않습니다.</p>
+<h2 id="conda-2">2. 환경 생성·활성화·종료</h2>
+<p>Python 버전은 응용프로그램 지원 조건에 맞춰 선택합니다. 아래 3.11은 예시이며 모든 제품의 요구 버전은 아닙니다.</p>
+<pre><code class="language-bash">conda create -n research-demo python=3.11 pip
+conda activate research-demo
+command -v python
+python --version
+python -m pip --version
+python -m pip install numpy
+python -c 'import numpy; print(numpy.__version__)'
+conda deactivate
+</code></pre>
+<p>환경 안에서 <code>python -m pip</code>를 쓰면 대상 Python을 분명히 할 수 있습니다. 시스템 Python에 패키지를 설치하지 않습니다. 여러 노드에서 공유 환경을 동시에 변경하지 않습니다.</p>
+<h2 id="conda-3-tensorflow-cuda">3. TensorFlow와 CUDA 환경</h2>
+<p>GPU 드라이버, Python, TensorFlow, CUDA 런타임의 호환 조합을 먼저 확인합니다. 오래된 TensorFlow 1.x·Python 3.6·CUDA 9 예제는 레거시 조합이며 현재 장비용 기본 설치 명령이 아닙니다. 기존 연구의 재현이 필요하면 격리된 환경·컨테이너와 원래 요구사항을 담당자에게 확인합니다.</p>
+<p>현재 Linux용 TensorFlow가 지원하는 조건을 만족하고 해당 GPU 자원 사용이 승인된 경우의 설치 형태입니다. 버전을 생략해 자동으로 바뀌게 두기보다 프로젝트에서 검증한 값을 지정합니다.</p>
+<pre><code class="language-bash">conda activate research-demo
+python -m pip install 'tensorflow[and-cuda]==YOUR_SUPPORTED_TF_VERSION'
+python -c 'import tensorflow as tf; print(tf.__version__); print(tf.config.list_physical_devices(&quot;GPU&quot;))'
+</code></pre>
+<p>CPU용 설치는 지원 버전의 <code>tensorflow</code> 패키지를 사용합니다. 다른 버전의 시스템 CUDA·Module·pip 런타임을 무조건 함께 올리지 않습니다. <a href="https://www.tensorflow.org/install/pip">TensorFlow 설치 문서</a>를 기준으로 OS·GPU·드라이버를 확인합니다.</p>
+<h2 id="conda-4">4. 스크립트와 배치 실행</h2>
+<p>일괄 실행에서는 <code>.bashrc</code>에만 의존하지 말고 Conda 설치 경로를 명시합니다. <code>YOUR_CONDA_ROOT</code>를 실제 경로로 바꿉니다.</p>
+<pre><code class="language-bash">cat &gt; run-python.sh &lt;&lt;'EOF'
+#!/bin/bash
+set -euo pipefail
+source YOUR_CONDA_ROOT/etc/profile.d/conda.sh
+conda activate research-demo
+python -u ./your_program.py &gt; python-run.log 2&gt;&amp;1
+EOF
+bash -n run-python.sh
+bash run-python.sh
+</code></pre>
+<p>계산 노드와 자원을 배정받은 후 실행합니다. 단일 명령에는 <code>conda run -n research-demo python your_program.py</code>도 사용할 수 있습니다. Slurm 예제는 <a href="#slurm">작업 제출 안내</a>를 확인합니다.</p>
+<h2 id="conda-5">5. 환경 내보내기·복원·제거</h2>
+<pre><code class="language-bash">conda env export -n research-demo &gt; environment-full.yml
+conda env export -n research-demo --from-history &gt; environment-history.yml
+conda list -n research-demo --explicit &gt; environment-explicit.txt
+conda env create -n research-rebuild -f environment-history.yml
+conda activate research-rebuild
+python --version
+conda deactivate
+</code></pre>
+<p>전체 YAML은 설치된 의존성까지, history는 직접 요청한 항목 중심으로 기록합니다. explicit 목록은 같은 플랫폼의 재현에 적합합니다. 채널·플랫폼·pip 의존성·빌드가 달라지면 동일 결과가 보장되지 않습니다. 내보낸 파일의 개인 경로·사설 채널 인증정보를 확인한 뒤 공유합니다.</p>
+<p>사용하지 않는 환경은 실행 중인 작업이 없는지 확인한 후 제거합니다.</p>
+<pre><code class="language-bash">conda deactivate
+conda env remove -n research-rebuild
+conda env list
+</code></pre>
+<p>로그인 때 특정 환경을 자동 활성화할 수 있으나, 다른 프로그램·MPI와 충돌할 수 있습니다. 기본 자동 활성화보다는 실행 스크립트에서 환경을 지정하는 방법을 권합니다. 자동화가 필요하면 <code>.bashrc</code>의 기존 Conda 초기화 부분을 보존하고 사용자 추가 부분만 수정합니다.</p></section>
+<section id="modules" class="page" aria-label="Module 사용"><h1 id="modules-module">Module로 공유 프로그램 사용하기</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#modules-module">Module로 공유 프로그램 사용하기</a><ul>
+<li><a href="#modules-1">1. 기본 명령</a></li>
+<li><a href="#modules-2">2. 버전 선택과 전환</a></li>
+<li><a href="#modules-3">3. 환경 변화 확인</a></li>
+<li><a href="#modules-4">4. 실행 스크립트</a></li>
+<li><a href="#modules-5">5. 기본 환경과 저장 공간</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<h2 id="modules-1">1. 기본 명령</h2>
+<p>Module은 관리자 설치본의 PATH·라이브러리 경로 등을 세션에 반영합니다. 프로그램 자체를 새로 설치하는 명령이 아닙니다. Lmod와 Environment Modules의 기능은 일부 다르므로 제공되는 도구를 확인합니다.</p>
+<pre><code class="language-bash">type module
+module --version
+module list
+module avail
+module show YOUR_MODULE
+module load YOUR_MODULE
+module unload YOUR_MODULE
+</code></pre>
+<p>Lmod에서 <code>ml</code>은 짧은 명령으로 사용할 수 있습니다. <code>module spider YOUR_KEYWORD</code>는 계층형 모듈의 검색에 유용하며 모든 구현에 있는 기능은 아닙니다.</p>
+<h2 id="modules-2">2. 버전 선택과 전환</h2>
+<pre><code class="language-bash">module avail
+module load YOUR_COMPILER_MODULE
+command -v gcc
+gcc --version
+module swap YOUR_COMPILER_MODULE YOUR_OTHER_COMPILER_MODULE
+module list
+</code></pre>
+<p>CUDA는 제공되는 NVIDIA GPU와 개발 도구가 필요한 경우에만 사용합니다. <code>nvidia-smi</code>의 CUDA 표시와 <code>nvcc --version</code>은 각각 드라이버 지원 수준과 개발 툴킷 정보를 보여주므로 같지 않을 수 있습니다.</p>
+<pre><code class="language-bash">module load YOUR_CUDA_MODULE
+command -v nvcc
+nvcc --version
+</code></pre>
+<p>컴파일러·MPI·수치 라이브러리는 호환되는 조합으로 사용합니다. GNU용 MPI와 다른 컴파일러로 만든 바이너리를 임의로 섞지 않습니다. ANSYS 등 제품이 제공하는 MPI는 제품별 안내를 따릅니다.</p>
+<h2 id="modules-3">3. 환경 변화 확인</h2>
+<pre><code class="language-bash">printf '%s\n' &quot;$PATH&quot;
+printf '%s\n' &quot;${LD_LIBRARY_PATH:-}&quot;
+module show YOUR_MODULE
+command -v YOUR_COMMAND
+</code></pre>
+<p><code>module purge</code>는 현재 모듈을 내립니다. Lmod의 sticky 모듈이나 현장 기본값은 남거나 다시 로드될 수 있습니다. <code>module reset</code>의 제공 여부와 기본 모듈도 확인합니다. 알 수 없는 충돌을 해결하려고 사용자 환경 전체를 무조건 삭제하지 않습니다.</p>
+<h2 id="modules-4">4. 실행 스크립트</h2>
+<pre><code class="language-bash">cat &gt; module-check.sh &lt;&lt;'EOF'
+#!/bin/bash
+set -euo pipefail
+# module 명령이 비대화형 셸에도 제공되는지 확인합니다.
+type module
+module load YOUR_MODULE
+module list
+YOUR_COMMAND --version
+EOF
+bash -n module-check.sh
+bash module-check.sh
+</code></pre>
+<p>module이 없으면 관리자가 지정한 초기화 스크립트를 먼저 source합니다. 특정 <code>/etc/profile.d</code> 파일이 모든 현장에 있다고 가정하지 않습니다.</p>
+<h2 id="modules-5">5. 기본 환경과 저장 공간</h2>
+<p>Lmod에서는 <code>module save YOUR_COLLECTION</code>, <code>module restore YOUR_COLLECTION</code>으로 환경을 저장·복원할 수 있습니다. 이름이 바뀐 모듈은 복원에 실패할 수 있습니다. <code>.bashrc</code>에 모듈을 넣는 경우 기존 파일을 보관하고 승인된 모듈만 추가합니다. 설치되지 않은 CUDA나 특정 버전을 모든 로그인에 강제하지 않습니다.</p>
+<p>공유 프로그램을 사용하면 개인 환경의 중복 설치를 줄일 수 있습니다. 개인 사용량은 <code>du -sh "$HOME"</code>, 저장소 여유는 <code>df -h "$HOME"</code>로 확인합니다. 사용자 quota는 현장 파일시스템에 맞는 도구·안내를 사용합니다.</p>
+<p>참고: <a href="https://lmod.readthedocs.io/en/latest/010_user.html">Lmod 사용자 안내</a></p></section>
+<section id="docker" class="page" aria-label="Docker"><h1 id="docker-docker">Docker 사용하기</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#docker">Docker 사용하기</a><ul>
+<li><a href="#docker-1">1. 사용 환경 확인</a></li>
+<li><a href="#docker-2">2. 이미지 선택과 내려받기</a></li>
+<li><a href="#docker-3">3. 기본 실행과 작업 폴더 연결</a></li>
+<li><a href="#docker-4">4. 대화형 사용·상태·로그·종료</a></li>
+<li><a href="#docker-5-gpu">5. GPU 실행</a></li>
+<li><a href="#docker-6">6. 셸 스크립트로 반복 실행</a></li>
+<li><a href="#docker-7">7. 이미지 만들기와 재사용</a></li>
+<li><a href="#docker-8-hpc">8. 정리와 HPC 사용 시 유의점</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>Docker가 제공·허용된 노드에서만 사용합니다. 일반 Docker daemon 접근 권한은 root 수준의 권한을 줄 수 있으며 <code>--user</code>는 daemon 접근 권한 자체를 제한하지 않습니다. Docker 그룹 가입, rootless 구성, GPU 실행 권한은 관리자가 정합니다.</p>
+<h2 id="docker-1">1. 사용 환경 확인</h2>
+<pre><code class="language-bash">docker version
+docker info
+id
+</code></pre>
+<p>Client만 보이거나 daemon 연결·권한 오류가 나면 담당자에게 문의합니다. <code>/var/run/docker.sock</code> 권한을 넓히거나 승인 없이 sudo로 우회하지 않습니다. Rootless Docker는 별도 구성과 기능 제한이 있습니다.</p>
+<h2 id="docker-2">2. 이미지 선택과 내려받기</h2>
+<pre><code class="language-bash">IMAGE=YOUR_APPROVED_IMAGE
+docker pull &quot;$IMAGE&quot;
+docker image ls
+docker image inspect &quot;$IMAGE&quot;
+</code></pre>
+<p>프로젝트가 검증한 저장소·태그·가능하면 digest를 기록합니다. <code>latest</code>나 같은 태그의 내용은 바뀔 수 있습니다. 이미지의 OS·CPU·Python·프레임워크·CUDA 버전과 라이선스를 확인합니다. 큰 이미지는 다운로드·로컬 저장 용량을 먼저 확인합니다.</p>
+<h2 id="docker-3">3. 기본 실행과 작업 폴더 연결</h2>
+<p>현재 폴더를 컨테이너의 <code>/work</code>로 연결합니다. 컨테이너 안에서 호스트의 HOME·사용자명이 자동으로 같은 의미가 되지는 않습니다.</p>
+<pre><code class="language-bash">docker run --rm --user &quot;$(id -u):$(id -g)&quot; \
+  --mount &quot;type=bind,src=$PWD,dst=/work&quot; -w /work \
+  &quot;$IMAGE&quot; python -c 'import sys; print(sys.version)'
+</code></pre>
+<p>이미지가 숫자 UID 실행을 지원해야 합니다. 프로젝트가 추가 그룹이나 쓰기 가능한 HOME을 요구하면 관리자와 이미지 설정을 확인합니다. 입력 전용 경로는 read-only 바인드를 사용할 수 있습니다. 시스템 디렉터리 전체를 임의로 연결하지 않습니다.</p>
+<pre><code class="language-bash">docker run --rm --user &quot;$(id -u):$(id -g)&quot; \
+  --mount &quot;type=bind,src=$PWD,dst=/work&quot; -w /work \
+  &quot;$IMAGE&quot; python /work/your_program.py
+</code></pre>
+<p><code>--rm</code>은 종료된 컨테이너를 제거하지만 바인드된 작업 폴더의 파일은 남습니다. 컨테이너 내부의 임시 변경은 결과 보관 경로가 아닙니다.</p>
+<h2 id="docker-4">4. 대화형 사용·상태·로그·종료</h2>
+<pre><code class="language-bash">docker run --name research-shell -it \
+  --user &quot;$(id -u):$(id -g)&quot; \
+  --mount &quot;type=bind,src=$PWD,dst=/work&quot; -w /work &quot;$IMAGE&quot; sh
+docker ps
+docker ps -a
+docker logs research-shell
+docker exec -it research-shell sh
+docker stop research-shell
+docker rm research-shell
+</code></pre>
+<p>대화형 셸을 나간 다음 같은 컨테이너 이름을 다시 쓰려면 기존 컨테이너를 정리합니다. <code>docker exec</code>는 실행 중인 컨테이너에만 사용합니다. 종료는 본인 컨테이너와 결과 저장을 확인한 뒤 수행합니다. 다른 사용자의 컨테이너를 조작하거나 일괄 prune하지 않습니다.</p>
+<h2 id="docker-5-gpu">5. GPU 실행</h2>
+<p>지원 드라이버와 NVIDIA Container Toolkit이 구성되어 있어야 합니다. 직접 실행이 허용된 환경에서 승인받은 GPU만 지정하는 예제입니다.</p>
+<pre><code class="language-bash">docker run --rm --gpus 'device=YOUR_ASSIGNED_GPU_ID' &quot;$IMAGE&quot; nvidia-smi
+</code></pre>
+<p>기존 <code>--runtime=nvidia</code> 방식과 현재 <code>--gpus</code> 방식은 설치 구성에 따라 다릅니다. 과거 예제를 무조건 대체 적용하지 않습니다. Slurm의 <code>CUDA_VISIBLE_DEVICES</code>는 컨테이너/호스트의 GPU 번호와 그대로 대응하지 않을 수 있으므로 스케줄러가 제공하는 컨테이너 연동을 사용합니다. <code>--gpus all</code>로 할당 외 GPU를 사용하지 않습니다.</p>
+<h2 id="docker-6">6. 셸 스크립트로 반복 실행</h2>
+<pre><code class="language-bash">cat &gt; run-container.sh &lt;&lt;'EOF'
+#!/bin/bash
+set -euo pipefail
+IMAGE=YOUR_APPROVED_IMAGE
+docker run --rm --user &quot;$(id -u):$(id -g)&quot; \
+  --mount &quot;type=bind,src=$PWD,dst=/work&quot; -w /work \
+  &quot;$IMAGE&quot; python /work/your_program.py
+EOF
+bash -n run-container.sh
+bash run-container.sh &gt; container-run.log 2&gt;&amp;1
+</code></pre>
+<h2 id="docker-7">7. 이미지 만들기와 재사용</h2>
+<p>대화형 변경만 남기기보다 Dockerfile과 환경 파일을 기록합니다. 다음은 별도로 준비한 requirements.txt를 이미지에 추가하는 형태입니다.</p>
+<pre><code class="language-dockerfile">FROM YOUR_APPROVED_BASE_IMAGE
+WORKDIR /work
+COPY requirements.txt /tmp/requirements.txt
+RUN python -m pip install --no-cache-dir -r /tmp/requirements.txt
+</code></pre>
+<pre><code class="language-bash">docker build -t local/research-demo:1 .
+docker image ls
+</code></pre>
+<p><code>docker commit</code>은 대화형 컨테이너 변경을 이미지로 만들 수 있으나 이력 재현이 어렵고 비밀정보가 들어갈 수 있습니다. Dockerfile을 우선하고 이미지 레이어에도 비밀값을 넣지 않습니다. 저장소로 배포할 때는 승인된 namespace로 <code>docker tag</code>·<code>docker push</code>하고 인증정보는 이미지에 포함하지 않습니다. 여러 컨테이너 조합은 <code>docker compose</code>가 제공·허용된 경우 별도 프로젝트 설정으로 관리합니다.</p>
+<h2 id="docker-8-hpc">8. 정리와 HPC 사용 시 유의점</h2>
+<p>본인 프로젝트가 사용하지 않는 이미지인지 확인한 뒤 <code>docker image rm YOUR_IMAGE_ID</code>로 정리합니다. 실행 중인 컨테이너와 공유 이미지의 영향을 먼저 확인합니다.</p>
+<p>이미지는 노드별 로컬 저장소에 있어야 할 수 있고 RAM 기반 노드에서는 재부팅으로 사라질 수 있습니다. 계산 전에 승인된 방식으로 준비하거나 Apptainer/Singularity의 공유 이미지 방식을 검토합니다. 파일 소유권·메모리·공유 메모리·GPU·네트워크 정책은 현장 설정을 따릅니다.</p>
+<p>참고: <a href="https://docs.docker.com/engine/containers/run/">Docker 실행</a>, <a href="https://docs.docker.com/engine/install/linux-postinstall/">권한 안내</a></p></section>
+<section id="apptainer" class="page" aria-label="Apptainer·Singularity"><h1 id="apptainer-apptainer-singularity">Apptainer와 Singularity</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#apptainer-apptainer-singularity">Apptainer와 Singularity</a><ul>
+<li><a href="#apptainer-1">1. 제공 여부 확인</a></li>
+<li><a href="#apptainer-2">2. 이미지 가져오기와 기본 실행</a></li>
+<li><a href="#apptainer-3-gpu">3. GPU와 공용 라이브러리</a></li>
+<li><a href="#apptainer-4">4. 이미지 빌드·수정</a></li>
+<li><a href="#apptainer-5">5. 실행 스크립트</a></li>
+<li><a href="#apptainer-6-jupyter">6. Jupyter 실행</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>과학 계산용 컨테이너 실행기입니다. 같은 계열이라도 제품·버전에 따라 옵션과 보안 설정이 다릅니다. 아래 예제는 <code>apptainer</code>를 사용하며 Singularity만 제공되는 현장은 담당자가 확인한 대응 명령으로 바꿉니다.</p>
+<h2 id="apptainer-1">1. 제공 여부 확인</h2>
+<pre><code class="language-bash">module avail
+command -v apptainer
+apptainer --version
+</code></pre>
+<p>모듈 방식이면 현장에서 안내받은 모듈을 먼저 불러옵니다. 컨테이너라고 모든 권한 문제가 사라지는 것은 아닙니다. 호스트 파일·바인드·네트워크·GPU 접근은 사용자 권한과 관리자 정책에 따릅니다.</p>
+<h2 id="apptainer-2">2. 이미지 가져오기와 기본 실행</h2>
+<pre><code class="language-bash">apptainer pull research.sif docker://YOUR_APPROVED_IMAGE
+ls -lh research.sif
+apptainer inspect research.sif
+apptainer exec research.sif cat /etc/os-release
+apptainer shell research.sif
+</code></pre>
+<p>셸 종료는 <code>exit</code>입니다. 이미지 안에 Python이 있는 경우:</p>
+<pre><code class="language-bash">apptainer exec research.sif python --version
+apptainer exec --bind &quot;$PWD:/work&quot; --pwd /work research.sif python /work/your_program.py
+</code></pre>
+<p>HOME·현재 폴더 등의 기본 바인드 범위는 버전·설정에 따라 달라집니다. 데이터·출력 경로를 확인하고 명시적으로 연결합니다. 바인드된 호스트 파일은 컨테이너 안에서 변경할 수도 있으므로 필요하면 <code>:ro</code>로 제한합니다.</p>
+<h2 id="apptainer-3-gpu">3. GPU와 공용 라이브러리</h2>
+<pre><code class="language-bash">apptainer exec --nv research.sif nvidia-smi
+</code></pre>
+<p>GPU 사용이 할당된 노드에서 실행합니다. <code>--nv</code>가 모든 프레임워크·CUDA 조합의 호환성을 보장하지는 않습니다. 이미지의 프레임워크 런타임과 호스트 드라이버 조합을 확인합니다.</p>
+<p>관리자가 승인한 공용 라이브러리 경로를 바인드해야 하는 경우의 형태입니다.</p>
+<pre><code class="language-bash">apptainer exec --nv --bind YOUR_SHARED_SOFTWARE_PATH:/software:ro \
+  research.sif sh -c 'printf &quot;%s\n&quot; &quot;$LD_LIBRARY_PATH&quot;; ls /software'
+</code></pre>
+<p>환경변수를 컨테이너 안에서 확인할 때는 <code>sh -c '...'</code>처럼 셸을 명시합니다. 호스트에서 먼저 확장된 변수값을 보고 컨테이너 내부 값이라고 판단하지 않습니다. 라이브러리 바인드만으로 ABI나 MPI 호환성이 해결되지는 않습니다.</p>
+<h2 id="apptainer-4">4. 이미지 빌드·수정</h2>
+<p>SIF 이미지를 직접 수정하지 않는 방식이 일반적이지만, 이미지 생성·수정이 불가능하다는 뜻은 아닙니다. 정의 파일·sandbox·overlay 지원과 권한을 확인합니다.</p>
+<pre><code class="language-text">Bootstrap: docker
+From: YOUR_APPROVED_BASE_IMAGE
+
+%post
+    echo &quot;Add only approved package-install commands for this image OS.&quot;
+
+%runscript
+    exec python &quot;$@&quot;
+</code></pre>
+<p>위 형태를 <code>research.def</code>로 저장하고 승인된 빌드 환경에서 생성합니다.</p>
+<pre><code class="language-bash">apptainer build research.sif research.def
+</code></pre>
+<p>필요한 권한이나 fakeroot·원격 빌드가 제공되지 않으면 관리자에게 요청합니다. sandbox를 지원하고 수정이 허용된 경우:</p>
+<pre><code class="language-bash">apptainer build --sandbox research-sandbox research.sif
+apptainer shell --writable research-sandbox
+apptainer build research-repacked.sif research-sandbox
+</code></pre>
+<p><code>--writable</code>이 일반 사용자에게 root 권한을 주지는 않습니다. 영구 변경은 정의 파일에 기록해 재현하고, 동시 쓰기 중인 sandbox를 공유 작업에서 사용하지 않습니다.</p>
+<h2 id="apptainer-5">5. 실행 스크립트</h2>
+<pre><code class="language-bash">cat &gt; run-apptainer.sh &lt;&lt;'EOF'
+#!/bin/bash
+set -euo pipefail
+apptainer exec --bind &quot;$PWD:/work&quot; --pwd /work \
+  ./research.sif python /work/your_program.py
+EOF
+bash -n run-apptainer.sh
+bash run-apptainer.sh &gt; apptainer-run.log 2&gt;&amp;1
+</code></pre>
+<p>GPU가 필요하면 자원 할당을 먼저 확인하고 <code>--nv</code>를 추가합니다. Slurm에서는 <a href="#slurm">작업 예제</a>의 자원 요청과 함께 사용합니다.</p>
+<h2 id="apptainer-6-jupyter">6. Jupyter 실행</h2>
+<p>Jupyter가 설치된 이미지에서 실행하고 호스트의 작업 폴더를 바인드합니다.</p>
+<pre><code class="language-bash">apptainer exec --bind &quot;$PWD:/work&quot; --pwd /work research.sif \
+  jupyter lab --no-browser --ip=127.0.0.1 --port=8888
+</code></pre>
+<p><a href="#optional">GUI·터널 안내</a>의 SSH 포트 전달로 내 PC 브라우저에서 접속합니다. X11 브라우저 실행이 필수인 것은 아닙니다. 계산 노드에서 실행할 때는 노드 할당과 해당 노드까지의 터널 경로를 확인합니다.</p>
+<p>참고: <a href="https://apptainer.org/docs/user/main/build_a_container.html">Apptainer 이미지 빌드</a>, <a href="https://apptainer.org/docs/user/main/gpu.html">GPU 지원</a></p></section>
+<section id="gpu" class="page" aria-label="GPU·학습 실습"><h1 id="gpu-gpu">GPU 확인과 학습 실습</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#gpu">GPU 확인과 학습 실습</a><ul>
+<li><a href="#gpu-1">1. 드라이버·사용량 확인</a></li>
+<li><a href="#gpu-2-tensorflow-gpu">2. 작은 TensorFlow GPU 시험</a></li>
+<li><a href="#gpu-3-gan">3. 짧은 GAN 학습 시험</a></li>
+<li><a href="#gpu-4">4. 컨테이너에서 같은 예제 실행</a></li>
+<li><a href="#gpu-5">5. 오류가 날 때</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>GPU가 제공되는 노드에서 사용 권한과 할당을 먼저 받습니다. 로그인 서버에 GPU가 없다고 전체 클러스터에 GPU가 없는 것은 아닙니다. GPU 없이 진행할 환경 시험과 GPU 계산 시험을 구분합니다.</p>
+<h2 id="gpu-1">1. 드라이버·사용량 확인</h2>
+<pre><code class="language-bash">nvidia-smi
+nvidia-smi --query-gpu=index,name,memory.used,memory.total,utilization.gpu --format=csv
+printf '%s\n' &quot;${CUDA_VISIBLE_DEVICES:-not-set}&quot;
+</code></pre>
+<p><code>gpustat</code>은 별도 설치된 경우에만 사용할 수 있습니다. 지속 확인은 <code>watch -n 2 nvidia-smi</code> 또는 <code>nvidia-smi --loop=2</code>를 사용하고 <code>Ctrl+c</code>로 마칩니다. 상태 조회가 자원 예약을 의미하지는 않습니다. 직접 실행 환경에서는 예약·사용 조정 정책을 따릅니다.</p>
+<h2 id="gpu-2-tensorflow-gpu">2. 작은 TensorFlow GPU 시험</h2>
+<p>실습 예제를 한 번에 받으려면 Git으로 이 가이드를 내려받을 수 있습니다. 받은 코드를 확인한 뒤 승인된 작업 공간에서 실행하세요.</p>
+<pre><code class="language-bash">git clone https://github.com/leekwangseon/openhpc-guide.git
+cd openhpc-guide/examples
+</code></pre>
+<p>필요한 파일만 받을 때는 아래 curl 명령을 사용합니다.</p>
+<p>검증된 <a href="#conda">Conda 환경</a>, Module 또는 컨테이너 중 하나를 준비합니다. 예제는 외부 데이터를 내려받지 않는 작은 행렬 계산입니다.</p>
+<pre><code class="language-bash">curl -fLO https://leekwangseon.github.io/openhpc-guide/examples/tf-smoke.py
+python tf-smoke.py
+</code></pre>
+<p>성공하면 TensorFlow 버전·보이는 GPU·실제 장치·체크섬이 출력됩니다. GPU가 없으면 CPU로 조용히 대체하지 않고 실패하도록 구성했습니다. GPU 목록이 비거나 라이브러리 로드가 실패하면 할당·드라이버·런타임 조합을 확인합니다.</p>
+<h2 id="gpu-3-gan">3. 짧은 GAN 학습 시험</h2>
+<p>환경 확인을 위해 합성 데이터를 사용하는 작은 GAN 예제를 제공합니다. 기본 20 step이며 실제 연구용 모델이나 성능 측정용 기준이 아닙니다.</p>
+<pre><code class="language-bash">curl -fLO https://leekwangseon.github.io/openhpc-guide/examples/tf-gan-demo.py
+python -u tf-gan-demo.py --steps 20 --require-gpu &gt; gan.log 2&gt;&amp;1
+tail -n 20 gan.log
+</code></pre>
+<p>완료하면 현재 작업 폴더에 <code>gan-synthetic-samples.npy</code>가 생성됩니다. GPU가 없는 환경의 짧은 CPU 시험은 <code>--require-gpu</code>를 빼고 자원 정책에 맞게 실행할 수 있습니다. 원본 입력·중요 결과와 별도 실습 폴더를 사용합니다.</p>
+<h2 id="gpu-4">4. 컨테이너에서 같은 예제 실행</h2>
+<p>TensorFlow가 있는 승인된 이미지와 배정받은 GPU를 사용합니다.</p>
+<pre><code class="language-bash">apptainer exec --nv --bind &quot;$PWD:/work&quot; --pwd /work research.sif \
+  python /work/tf-smoke.py
+</code></pre>
+<p>Docker의 경우 <a href="#docker">Docker 안내</a>의 GPU 지정·작업 폴더 바인드를 사용합니다. Slurm 사용 환경에서는 <a href="#slurm">배치 스크립트</a>에 필요한 GPU 요청과 실행 부분을 반영합니다.</p>
+<h2 id="gpu-5">5. 오류가 날 때</h2>
+<p>실제 이미지 데이터의 DCGAN 학습까지 진행하려면 <a href="https://www.tensorflow.org/tutorials/generative/dcgan">TensorFlow 공식 DCGAN 예제</a>를 참고해 데이터 다운로드 경로·출력·체크포인트·실행 시간을 확인합니다. 본 안내의 작은 합성 데이터 시험을 먼저 통과한 후 같은 환경에서 확장합니다. 기존 TensorFlow 1.x 외부 예제를 사용할 때는 해당 예제의 버전·라이선스·의존성을 검토하고 코드를 확인한 뒤 실행합니다.</p>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>확인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU를 찾을 수 없음</td>
+<td>실제 실행 노드, GPU 배정, CUDA_VISIBLE_DEVICES, 컨테이너 GPU 전달</td>
+</tr>
+<tr>
+<td>CUDA 라이브러리 오류</td>
+<td>드라이버·프레임워크 런타임 조합, 중복 모듈·경로</td>
+</tr>
+<tr>
+<td>Out of memory</td>
+<td>GPU 실제 사용량, batch 크기, 다른 프로세스, 메모리 할당 정책</td>
+</tr>
+<tr>
+<td>no kernel image / unsupported architecture</td>
+<td>GPU 세대와 해당 바이너리의 지원 범위</td>
+</tr>
+<tr>
+<td>GPU 사용률 0%</td>
+<td>CPU 전처리·입출력 대기·실제 장치 선택·계산 규모</td>
+</tr>
+</tbody>
+</table>
+<p>GPU 번호를 임의로 바꾸어 다른 사용자의 자원을 쓰거나 드라이버를 개인 작업으로 교체하지 않습니다. 모델 체크포인트와 환경 버전을 함께 보관하면 재현·복구에 도움이 됩니다.</p></section>
+<section id="slurm" class="page" aria-label="Slurm 상세 사용"><h1 id="slurm-slurm">Slurm 작업 제출과 자원 정책</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#slurm">Slurm 작업 제출과 자원 정책</a><ul>
+<li><a href="#slurm-1">1. 자원과 대기열</a></li>
+<li><a href="#slurm-2">2. 노드·작업 상태 확인</a></li>
+<li><a href="#slurm-3">3. 대화형 작업</a></li>
+<li><a href="#slurm-4">4. 첫 배치 작업</a></li>
+<li><a href="#slurm-5-condamodule">5. Conda·Module·컨테이너 작업 예제</a></li>
+<li><a href="#slurm-6-mpi">6. MPI와 여러 노드</a></li>
+<li><a href="#slurm-7">7. 작업 취소·로그·실패 진단</a></li>
+<li><a href="#slurm-8">8. 우선순위·시작 예상시간</a></li>
+<li><a href="#slurm-9-qos">9. 사용자·그룹·QoS 제한 조회</a></li>
+<li><a href="#slurm-10">10. 파티션·노드·설정 확인</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>Slurm을 실제로 사용하는 현장을 위한 안내입니다. 직접 실행이 지정된 현장은 <a href="#run">직접 실행 안내</a>를 사용합니다. Slurm 밖에서 시작한 작업은 Slurm 대기열에 자동으로 표시되지 않습니다.</p>
+<h2 id="slurm-1">1. 자원과 대기열</h2>
+<p>Partition은 노드의 논리적 묶음, Job은 자원 요청과 실행 단위입니다. <code>--ntasks</code>는 프로세스 수, <code>--cpus-per-task</code>는 프로세스당 CPU 수입니다. 메모리는 <code>--mem</code> 또는 <code>--mem-per-cpu</code> 등 현장이 사용하는 정책을 확인합니다. 요청량이 크거나 제한을 넘으면 자원이 남아 보여도 작업이 대기할 수 있습니다.</p>
+<p>Backfill은 먼저 예정된 작업을 지연시키지 않는 범위에서 빈 시간에 다른 작업을 실행하는 방식입니다. 작업 시작 순서는 단순 제출 순서만이 아니라 예약·파티션·우선순위·필요 자원의 영향을 받습니다.</p>
+<h2 id="slurm-2">2. 노드·작업 상태 확인</h2>
+<pre><code class="language-bash">sinfo
+sinfo -Nel
+squeue -u &quot;$USER&quot;
+squeue -u &quot;$USER&quot; -o '%.18i %.12P %.24j %.8T %.10M %.6D %R'
+scontrol show job YOUR_JOB_ID
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>노드 상태</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idle</td>
+<td>Slurm 기준 미할당. 직접 실행 작업 유무는 별도</td>
+</tr>
+<tr>
+<td>mix</td>
+<td>일부 자원이 할당된 상태</td>
+</tr>
+<tr>
+<td>alloc</td>
+<td>자원이 할당된 상태</td>
+</tr>
+<tr>
+<td>drain / down</td>
+<td>새 작업 배정 제외 / 사용 불가 상태</td>
+</tr>
+<tr>
+<td>completing</td>
+<td>작업 종료·정리 중</td>
+</tr>
+<tr>
+<td>상태 뒤 <code>*</code></td>
+<td>응답하지 않는 노드 표시. 관리자 확인 필요</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>작업 상태</th>
+<th>확인할 점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PENDING</td>
+<td><code>%R</code> 또는 Reason 필드의 대기 이유</td>
+</tr>
+<tr>
+<td>RUNNING</td>
+<td>실행 노드·시간·출력 로그</td>
+</tr>
+<tr>
+<td>COMPLETED</td>
+<td>종료 코드와 실제 결과를 함께 확인</td>
+</tr>
+<tr>
+<td>FAILED / OUT_OF_MEMORY / TIMEOUT</td>
+<td>프로그램 오류 / 메모리 / 시간 제한</td>
+</tr>
+<tr>
+<td>CANCELLED</td>
+<td>사용자 또는 운영 정책에 의한 취소</td>
+</tr>
+</tbody>
+</table>
+<p><code>sinfolong</code>, <code>squeuelong</code>은 표준 Slurm 명령이 아니라 현장별 별칭일 수 있습니다. 없는 경우 위 표준 명령과 출력 형식을 사용합니다.</p>
+<h2 id="slurm-3">3. 대화형 작업</h2>
+<pre><code class="language-bash">srun -p YOUR_PARTITION --nodes=1 --ntasks=1 --cpus-per-task=2 \
+  --mem=2G --time=00:10:00 --pty bash
+hostname
+printf '%s\n' &quot;${SLURM_JOB_ID:-}&quot; &quot;${SLURM_CPUS_PER_TASK:-}&quot;
+exit
+</code></pre>
+<p>셸을 열기 전에 자원 배정을 기다릴 수 있습니다. 대화형 셸을 닫아야 자원을 반환합니다. 반면 <code>srun ... hostname</code>처럼 명령을 직접 지정하면 명령이 끝날 때 종료됩니다. 시간 제한은 배정 단계에서 지정합니다.</p>
+<p>GPU 노드가 제공되고 해당 파티션에서 GRES를 사용하는 경우 <code>--gres=gpu:1</code> 같은 요청을 추가합니다. GPU 종류·개수 요청 형식은 현장 설정을 따릅니다. 할당 후 <code>nvidia-smi</code>와 프레임워크 GPU 인식을 확인합니다.</p>
+<h2 id="slurm-4">4. 첫 배치 작업</h2>
+<p>공유 작업 폴더에서 파일을 작성합니다. 아래 예제는 2분 안에 호스트명과 날짜를 출력합니다.</p>
+<pre><code class="language-bash">cat &gt; hello.slurm &lt;&lt;'EOF'
+#!/bin/bash
+#SBATCH --job-name=hello
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --time=00:02:00
+#SBATCH --output=hello-%j.out
+#SBATCH --error=hello-%j.err
+set -euo pipefail
+hostname
+date --iso-8601=seconds
+EOF
+sbatch -p YOUR_PARTITION hello.slurm
+</code></pre>
+<p>Job ID를 기록하고 <code>squeue -u "$USER"</code>로 확인합니다. 완료 후 <code>hello-작업번호.out</code>, <code>.err</code>를 읽습니다. 스크립트의 <code>#SBATCH</code>는 셸 명령이 아니므로 <code>$HOME</code> 같은 셸 변수가 그 위치에서 자동 확장된다고 가정하지 않습니다. <code>%j</code>는 Slurm의 Job ID 치환 표기입니다.</p>
+<h2 id="slurm-5-condamodule">5. Conda·Module·컨테이너 작업 예제</h2>
+<p>다음 공통 템플릿의 실행 부분에서 <strong>사용할 환경 한 가지</strong>를 선택합니다. GPU가 필요한 작업에서만 현장에 맞는 GPU 요청을 추가합니다.</p>
+<pre><code class="language-bash">cat &gt; research.slurm &lt;&lt;'EOF'
+#!/bin/bash
+#SBATCH --job-name=research
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=4G
+#SBATCH --time=00:10:00
+#SBATCH --output=research-%j.out
+set -euo pipefail
+echo &quot;job=$SLURM_JOB_ID host=$(hostname)&quot;
+export OMP_NUM_THREADS=&quot;$SLURM_CPUS_PER_TASK&quot;
+
+# Conda 설치 경로와 프로그램을 실제 값으로 변경합니다.
+source YOUR_CONDA_ROOT/etc/profile.d/conda.sh
+conda activate research-demo
+srun python -u ./your_program.py
+EOF
+sbatch -p YOUR_PARTITION research.slurm
+</code></pre>
+<p>Module을 쓰면 위 Conda 초기화·활성화·실행 부분을 다음으로 바꿉니다. 비대화형 셸의 module 초기화는 현장 절차를 따릅니다.</p>
+<pre><code class="language-bash">module load YOUR_MODULE
+srun YOUR_APPLICATION YOUR_CONFIRMED_OPTIONS
+</code></pre>
+<p>Apptainer/Singularity를 쓰면 공유 이미지와 작업 폴더를 명시합니다.</p>
+<pre><code class="language-bash">srun apptainer exec --bind &quot;$PWD:/work&quot; --pwd /work \
+  ./research.sif python /work/your_program.py
+</code></pre>
+<p>GPU가 배정된 작업에는 승인된 이미지 조합에서 <code>--nv</code>를 추가합니다. Docker는 현장의 Slurm 연동 방식과 GPU 장치 매핑을 받아 사용합니다. <code>srun docker run</code>만으로 컨테이너의 권한·자원 격리가 완성된다고 가정하지 않습니다. <a href="#docker">Docker</a>와 <a href="#apptainer">Apptainer</a> 안내를 함께 확인합니다.</p>
+<h2 id="slurm-6-mpi">6. MPI와 여러 노드</h2>
+<p>각 노드가 같은 실행파일·라이브러리·입력 경로를 읽을 수 있어야 합니다. 지원되는 MPI 모듈과 Slurm MPI plugin을 확인합니다.</p>
+<pre><code class="language-bash">module load YOUR_COMPILER_MODULE YOUR_MPI_MODULE
+srun --mpi=list
+mpicc -O2 -o mpi-hello mpi-hello.c
+srun -p YOUR_PARTITION --nodes=2 --ntasks-per-node=2 \
+  --time=00:02:00 --mpi=YOUR_SUPPORTED_PLUGIN ./mpi-hello
+</code></pre>
+<p>예제 소스는 <a href="examples/mpi-hello.c">MPI 예제</a>에 있습니다. PMIx/PMI2 등 현장이 지원하는 조합으로 바꾸며, 모든 MPI에 같은 <code>--mpi</code> 값을 적용하지 않습니다. MPI 라이브러리·IB 모듈·응용프로그램을 단계별로 시험합니다. ANSYS와 같은 제품은 제품 자체의 Slurm/MPI 연동 절차를 우선합니다.</p>
+<h2 id="slurm-7">7. 작업 취소·로그·실패 진단</h2>
+<pre><code class="language-bash">scancel YOUR_JOB_ID
+scontrol show job YOUR_JOB_ID
+tail -n 50 research-YOUR_JOB_ID.out
+</code></pre>
+<p>회계 기능이 구성된 경우:</p>
+<pre><code class="language-bash">sacct -j YOUR_JOB_ID --format=JobID,JobName,State,Elapsed,ExitCode,MaxRSS
+</code></pre>
+<p><code>squeue</code>에서 사라졌다는 사실만으로 성공을 판단하지 않습니다. 메모리 오류는 실제 MaxRSS·요청량·프로세스 수를, TIMEOUT은 시간 제한과 체크포인트를 확인합니다. 무조건 자원을 크게 늘려 재제출하기보다 실패 원인을 먼저 확인합니다.</p>
+<p>같은 실행을 여러 입력으로 반복할 때는 현장에서 허용한 Job Array를 사용할 수 있습니다. <code>#SBATCH --array=1-5</code>와 <code>$SLURM_ARRAY_TASK_ID</code>, 출력 이름의 <code>%A_%a</code>를 조합하고 동시 실행 제한과 입력 대응을 확인합니다.</p>
+<h2 id="slurm-8">8. 우선순위·시작 예상시간</h2>
+<pre><code class="language-bash">squeue --start -u &quot;$USER&quot;
+sprio -u &quot;$USER&quot;
+sshare -l
+</code></pre>
+<p>기능과 권한이 제공되는 경우에 확인합니다. 예상 시작시각은 자원·정책·다른 작업의 종료에 따라 바뀌며 보장된 예약 시각이 아닙니다. Fairshare 정보가 없으면 회계·우선순위 plugin 구성을 담당자에게 확인합니다.</p>
+<p>Age, Fairshare, JobSize, Partition, QoS, Association, TRES 등의 요인이 설정된 가중치에 따라 우선순위에 반영될 수 있습니다. 큰 숫자의 우선순위 하나만으로 다음 실행 작업을 결정할 수는 없습니다. 현장의 예약·선점·파티션 정책도 영향을 줍니다.</p>
+<h2 id="slurm-9-qos">9. 사용자·그룹·QoS 제한 조회</h2>
+<p>SlurmDBD와 회계가 설정되어 있고 조회 권한이 있는 경우의 예입니다. 이 안내의 숫자를 운영 제한으로 간주하지 않습니다.</p>
+<pre><code class="language-bash">sacctmgr show cluster
+sacctmgr show account
+sacctmgr show association where user=&quot;$USER&quot;
+sacctmgr show qos format=Name,Priority,MaxWall,MaxJobsPU,MaxSubmitPU,MaxTRESPU
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>정책</th>
+<th>의미</th>
+<th>확인할 값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MaxJobs / MaxJobsPU</td>
+<td>동시 실행 수 제한</td>
+<td>현장 정책</td>
+</tr>
+<tr>
+<td>MaxSubmit / MaxSubmitPU</td>
+<td>실행·대기 등을 포함한 제출 수 제한</td>
+<td>현장 정책</td>
+</tr>
+<tr>
+<td>MaxWall</td>
+<td>최대 실행시간</td>
+<td>요청 가능 범위</td>
+</tr>
+<tr>
+<td>GrpTRES / MaxTRESPU</td>
+<td>그룹·사용자의 자원 제한</td>
+<td>CPU·메모리·GPU 등</td>
+</tr>
+<tr>
+<td>Fairshare / Shares</td>
+<td>사용량과 배분 기준</td>
+<td>소속 Account·Association</td>
+</tr>
+<tr>
+<td>QoS</td>
+<td>우선순위·상한·예외 정책</td>
+<td>허용된 QoS와 기본값</td>
+</tr>
+</tbody>
+</table>
+<p>제한 초과·라이선스 대기·노드 비가용 등 대기 사유를 확인하고 담당자에게 Job ID와 함께 문의합니다. 사용자가 회계·QoS 값을 임의로 수정하지 않습니다.</p>
+<h2 id="slurm-10">10. 파티션·노드·설정 확인</h2>
+<pre><code class="language-bash">scontrol show partition YOUR_PARTITION
+scontrol show node YOUR_NODE
+scontrol show config
+</code></pre>
+<p>상세 출력의 CPU·메모리·GRES·시간 제한과 현장 안내를 비교합니다. 설정 파일은 <code>/etc/slurm/slurm.conf</code> 등의 현장 경로에 있고 configless 노드는 캐시·서비스 설정이 다를 수 있습니다. 사용자에게 공개되지 않는 값이 있으면 담당자에게 필요한 범위만 요청합니다. 조회와 설정 변경은 다른 권한입니다.</p>
+<p>다음은 <strong>정책 해석을 위한 가상의 예</strong>이며 제공 중인 클러스터의 제한이 아닙니다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>예시</th>
+<th>해석</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사용자 동시 실행</td>
+<td>2개</td>
+<td>세 번째 작업은 다른 조건이 충족되어도 대기할 수 있음</td>
+</tr>
+<tr>
+<td>프로젝트 동시 GPU</td>
+<td>4개</td>
+<td>같은 Account 사용자가 함께 사용하는 상한</td>
+</tr>
+<tr>
+<td>일반 QoS</td>
+<td>최대 1일</td>
+<td>더 긴 시간 요청은 거부·대기 사유가 될 수 있음</td>
+</tr>
+<tr>
+<td>짧은 작업 QoS</td>
+<td>최대 30분</td>
+<td>지정 조건을 만족하는 작업만 사용</td>
+</tr>
+</tbody>
+</table>
+<p><code>sbatch --account=YOUR_ACCOUNT --qos=YOUR_QOS -p YOUR_PARTITION job.slurm</code>처럼 승인된 조합을 사용합니다. 정책에 따라 허용된 기본값이 자동 적용될 수도 있습니다. Fairshare 사용량 감소 주기·우선순위 가중치·QoS 제한은 각 현장 값으로 확인합니다.</p>
+<p>참고: <a href="https://slurm.schedmd.com/quickstart.html">Slurm 빠른 시작</a>, <a href="https://slurm.schedmd.com/squeue.html">squeue</a>, <a href="https://slurm.schedmd.com/priority_multifactor.html">우선순위</a>, <a href="https://slurm.schedmd.com/sacctmgr.html">회계 조회</a></p></section>
 <section id="optional" class="page" aria-label="GUI와 선택 기능"><h1 id="optional-gui">GUI와 선택 기능</h1>
 <p>GUI용 X11 전달은 내 PC의 X 서버·서버 설정이 모두 필요합니다. 일반 SSH 접속과 별도 기능입니다. <code>ssh -X</code>를 먼저 사용하고, 신뢰하는 서버에 한해 필요 시 <code>-Y</code> 사용 여부를 관리자에게 확인합니다. 계산 노드까지의 GUI 접속은 승인된 별도 절차를 따릅니다.</p>
 <p>Jupyter는 X11을 필수로 요구하지 않습니다. 현장에서 허용한 실행 노드에 서버를 띄우고 SSH 로컬 포트 전달로 브라우저에서 접속할 수 있습니다. 다음은 <strong>내 PC에서 실행 노드에 직접 SSH 접속 가능한 경우</strong>의 예입니다.</p>
@@ -249,6 +1217,6 @@ module load YOUR_MODULE
 <p>문의에는 실행 명령, 작업 폴더, 노드 이름, 프로그램 버전, 시작·실패 시각을 적습니다. Slurm 작업이면 Job ID도 추가합니다. 비밀번호·키·토큰·개인정보·연구 데이터는 필요 범위를 확인한 뒤 전달합니다.</p></section><footer>접속 정보와 장비별 사용 정책은 담당자에게 받은 안내를 확인해 주세요. · <a href="admin.html">관리자 운영 안내</a></footer></main></div>
 <script>
 document.body.classList.add('js');
-function show(){let key=location.hash.slice(1)||'overview';if(!document.getElementById(key))key='overview';document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e.id===key));document.querySelectorAll('nav a').forEach(e=>{if(e.dataset.section===key)e.setAttribute('aria-current','page');else e.removeAttribute('aria-current')});document.title=document.querySelector('#'+key+' h1').textContent+' | OpenHPC 가이드';window.scrollTo(0,0)}
+function show(){let target=document.getElementById(decodeURIComponent(location.hash.slice(1)));let page=target?.closest('.page')||document.getElementById('overview');let key=page.id;document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e===page));document.querySelectorAll('nav a').forEach(e=>{if(e.dataset.section===key)e.setAttribute('aria-current','page');else e.removeAttribute('aria-current')});document.title=page.querySelector('h1').textContent+' | OpenHPC 가이드';if(target&&target!==page)target.scrollIntoView();else window.scrollTo(0,0)}
 window.addEventListener('hashchange',show);show();
 </script></body></html>

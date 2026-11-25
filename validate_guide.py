@@ -5,7 +5,7 @@ import collections, ipaddress, re, subprocess
 
 root=Path(__file__).resolve().parent
 errors=[]
-files=[p for p in root.rglob('*') if p.is_file() and '.git' not in p.parts and p.suffix in {'.md','.txt','.html','.py'}]
+files=[p for p in root.rglob('*') if p.is_file() and '.git' not in p.parts and p.suffix in {'.md','.txt','.html','.py','.c','.svg'}]
 allowed={'127.0.0.1','192.0.2.21'}
 for p in files:
     s=p.read_text(encoding='utf-8')
@@ -23,21 +23,26 @@ for p in files:
             if not link.startswith(('https://','http://','#')) and not (p.parent/link.split('#')[0]).exists():errors.append(f'{p.name}: broken link {link}')
 
 class Check(HTMLParser):
-    def __init__(self):super().__init__();self.ids=[];self.refs=[]
+    def __init__(self):super().__init__();self.ids=[];self.refs=[];self.links=[]
     def handle_starttag(self,tag,attrs):
         a=dict(attrs)
         if 'id' in a:self.ids.append(a['id'])
         if tag=='a' and a.get('href','').startswith('#'):self.refs.append(a['href'][1:])
+        elif tag=='a' and 'href' in a:self.links.append(a['href'])
 
-c=Check();c.feed((root/'index.html').read_text(encoding='utf-8'))
-for key,count in collections.Counter(c.ids).items():
-    if count>1:errors.append('duplicate HTML id: '+key)
-for ref in c.refs:
-    if ref not in c.ids:errors.append('broken HTML anchor: '+ref)
+total_ids=0
+for name in ['index.html','admin.html']:
+    c=Check();c.feed((root/name).read_text(encoding='utf-8'));total_ids+=len(c.ids)
+    for key,count in collections.Counter(c.ids).items():
+        if count>1:errors.append(name+': duplicate HTML id: '+key)
+    for ref in c.refs:
+        if ref not in c.ids:errors.append(name+': broken HTML anchor: '+ref)
+    for ref in c.links:
+        if not ref.startswith(('http://','https://')) and not (root/ref.split('#')[0]).exists():errors.append(name+': broken local link: '+ref)
 if (root/'index.html').read_bytes()!=(root/'OpenHPC-Guide.html').read_bytes():errors.append('HTML outputs differ')
 for banned in ['완료보고 메일 양식','현장별 안내서 양식','공개 전 다음','원본 수정과 HTML 재생성','문서 작성 기준','자유로운 재배포','제작자 점검']:
     if banned in (root/'index.html').read_text(encoding='utf-8'):errors.append('internal authoring content in customer page: '+banned)
-print('Checked',len(files),'public text/source files;',len(c.ids),'HTML IDs')
+print('Checked',len(files),'public text/source files;',total_ids,'HTML IDs')
 for e in errors:print('FAIL:',e)
 if errors:raise SystemExit(1)
 print('PASS: example IPs only; no key/token markers; Markdown links/fences and HTML anchors valid')

@@ -11,28 +11,52 @@ pages = [('overview', '처음 사용하기', 'customer/home.md'),
          ('run', '계산 실행', 'customer/run.md'),
          ('environment', '실행 환경', 'customer/environment.md'),
          ('basics', '서버와 저장 공간', 'customer/basics.md'),
+         ('terms', '개념과 기본 명령', 'customer/terms.md'),
+         ('conda', 'Conda·Python', 'customer/conda.md'),
+         ('modules', 'Module 사용', 'customer/modules.md'),
+         ('docker', 'Docker', 'customer/docker.md'),
+         ('apptainer', 'Apptainer·Singularity', 'customer/apptainer.md'),
+         ('gpu', 'GPU·학습 실습', 'customer/gpu.md'),
+         ('slurm', 'Slurm 상세 사용', 'customer/slurm.md'),
          ('optional', 'GUI와 선택 기능', 'customer/optional.md'),
          ('help', '문제 해결·문의', 'customer/help.md')]
-mapping = {name: '#' + key for key, _, name in pages}
-mapping.update({Path(name).name:'#'+key for key,_,name in pages})
-page_ids={key for key,_,_ in pages}
-sections = []
-for key, label, name in pages:
-    body = markdown.markdown((root/name).read_text(encoding='utf-8'), extensions=['fenced_code','tables','toc'])
-    body = re.sub(r'id="([^"]+)"',lambda m: 'id="'+key+'-'+m.group(1)+'"',body)
-    body = re.sub(r'href="#([^"]+)"',lambda m: 'href="#'+(m.group(1) if m.group(1) in page_ids else key+'-'+m.group(1))+'"',body)
-    for source, target in mapping.items():
-        body = body.replace('href="'+source+'"', 'href="'+target+'" data-section="'+target[1:]+'"')
-    body = body.replace('href="delivery-email.txt"', 'href="#email" data-section="email"')
-    sections.append('<section id="'+key+'" class="page" aria-label="'+label+'">'+body+'</section>')
-nav = ''.join('<a href="#'+key+'" data-section="'+key+'">'+label+'</a>' for key,label,_ in pages)
+admin_pages=[('overview','운영 개요','customer/admin.md'),
+ ('accounts','계정·동기화','customer/admin-accounts.md'),
+ ('apps','프로그램·이미지','customer/admin-apps.md'),
+ ('nfs','NFS 공유 추가','customer/admin-nfs.md'),
+ ('python','공유 Python·Module','customer/admin-python.md'),
+ ('nodes','노드 추가·교체','customer/admin-nodes.md'),
+ ('network','마스터 IP·이름 변경','customer/admin-network.md'),
+ ('power','IPMI·RACADM·전원','customer/admin-power.md')]
+
+def render(chapters):
+    mapping={name:'#'+key for key,_,name in chapters}
+    mapping.update({Path(name).name:'#'+key for key,_,name in chapters})
+    ids={key for key,_,_ in chapters}
+    sections=[]
+    for key,label,name in chapters:
+        parser=markdown.Markdown(extensions=['fenced_code','tables','toc'])
+        body=parser.convert((root/name).read_text(encoding='utf-8'))
+        toc=parser.toc
+        if toc.count('<a ')>=3:
+            body=re.sub(r'(</h1>)',r'\1<details class="chapter-toc"><summary>이 장의 목차</summary>'+toc+'</details>',body,count=1)
+        body=re.sub(r'id="([^"]+)"',lambda m:'id="'+key+'-'+m.group(1)+'"',body)
+        body=re.sub(r'href="#([^"]+)"',lambda m:'href="#'+(m.group(1) if m.group(1) in ids else key+'-'+m.group(1))+'"',body)
+        for source,target in mapping.items():
+            body=body.replace('href="'+source+'"','href="'+target+'"')
+        body=body.replace('href="../index.html"','href="index.html"')
+        body=body.replace('href="../examples/','href="examples/')
+        sections.append('<section id="'+key+'" class="page" aria-label="'+label+'">'+body+'</section>')
+    nav=''.join('<a href="#'+key+'" data-section="'+key+'">'+label+'</a>' for key,label,_ in chapters)
+    return nav,'\n'.join(sections)
+nav,sections=render(pages)
 template = '''<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>클러스터 사용 안내</title>
 <style>
 :root{--navy:#132b45;--ink:#192c3e;--blue:#096baf;--line:#dce3eb;--muted:#536678}
 *{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f4f7fb;font:16px/1.8 system-ui,-apple-system,"Malgun Gothic",sans-serif}
-header{background:var(--navy);color:white;padding:27px 38px}header strong{display:block;font-size:25px;letter-spacing:-.6px}header p{margin:4px 0 0;color:#cbd9e9;font-size:14px}
+header{background:var(--navy);color:white;padding:27px 38px}header strong{display:block;font-size:25px;letter-spacing:-.6px}header p{margin:4px 0 0;color:#cbd9e9;font-size:14px}.chapter-toc{border:1px solid var(--line);border-radius:7px;padding:12px 18px;margin:18px 0 28px;background:#f8fafc}.chapter-toc summary{cursor:pointer;font-weight:600}.chapter-toc ul{font-size:14px}
 .layout{display:grid;grid-template-columns:220px minmax(0,1fr);max-width:1360px;margin:auto}nav{padding:28px 18px;position:sticky;top:0;height:100vh;overflow:auto}nav a{display:block;padding:9px 14px;margin:4px 0;border-radius:7px;text-decoration:none;color:var(--ink)}nav a[aria-current="page"]{background:var(--navy);color:#fff}nav button{margin:20px 12px;padding:8px 12px;background:white;border:1px solid var(--line);border-radius:5px;cursor:pointer}
 main{background:white;padding:30px 46px 70px;min-width:0}.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 28px}.card{display:block;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:22px;color:var(--ink);background:#f8fafc}.card:hover{border-color:var(--blue);background:#eef6fc}.card strong{display:block;font-size:19px;margin-bottom:8px}.card span{font-size:14px;color:var(--muted)}.page{margin-bottom:60px}body.js .page{display:none}body.js .page.active{display:block}h1{font-size:29px;line-height:1.4;margin:8px 0 24px}h2{font-size:22px;margin:34px 0 14px;padding-top:12px;border-top:1px solid var(--line)}h3{font-size:18px;margin-top:28px}p{margin:13px 0}a{color:var(--blue);text-underline-offset:3px}li{margin:6px 0}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:10px 12px;vertical-align:top;text-align:left}th{background:#eef3f8}code{font:14px/1.6 Consolas,monospace;background:#eef3f8;border-radius:3px;padding:2px 4px}pre{background:#122537;color:#eff6ff;padding:18px 20px;border-radius:8px;overflow:auto;font:14px/1.7 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}footer{margin-top:36px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
 @media(max-width:800px){header{padding:22px}header strong{font-size:21px}.layout{display:block}.cards{grid-template-columns:1fr}nav{position:static;height:auto;padding:12px;display:flex;flex-wrap:wrap}nav a{padding:5px 10px;font-size:14px}nav button{margin:4px 10px}main{padding:22px}h1{font-size:25px}}
@@ -42,16 +66,15 @@ main{background:white;padding:30px 46px 70px;min-width:0}.cards{display:grid;gri
 <div class="layout"><nav aria-label="사용 안내">NAV<button onclick="window.print()" type="button">사용 안내 인쇄</button></nav><main>SECTIONS<footer>접속 정보와 장비별 사용 정책은 담당자에게 받은 안내를 확인해 주세요. · <a href="admin.html">관리자 운영 안내</a></footer></main></div>
 <script>
 document.body.classList.add('js');
-function show(){let key=location.hash.slice(1)||'overview';if(!document.getElementById(key))key='overview';document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e.id===key));document.querySelectorAll('nav a').forEach(e=>{if(e.dataset.section===key)e.setAttribute('aria-current','page');else e.removeAttribute('aria-current')});document.title=document.querySelector('#'+key+' h1').textContent+' | OpenHPC 가이드';window.scrollTo(0,0)}
+function show(){let target=document.getElementById(decodeURIComponent(location.hash.slice(1)));let page=target?.closest('.page')||document.getElementById('overview');let key=page.id;document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e===page));document.querySelectorAll('nav a').forEach(e=>{if(e.dataset.section===key)e.setAttribute('aria-current','page');else e.removeAttribute('aria-current')});document.title=page.querySelector('h1').textContent+' | OpenHPC 가이드';if(target&&target!==page)target.scrollIntoView();else window.scrollTo(0,0)}
 window.addEventListener('hashchange',show);show();
 </script></body></html>'''
-output=template.replace('NAV',nav).replace('SECTIONS','\n'.join(sections))
+output=template.replace('NAV',nav).replace('SECTIONS',sections)
 (root/'OpenHPC-Guide.html').write_text(output,encoding='utf-8')
 # GitHub Pages serves index.html; the same file also works offline without a server.
 (root/'index.html').write_text((root/'OpenHPC-Guide.html').read_text(encoding='utf-8'),encoding='utf-8')
-admin_body=markdown.markdown((root/'customer/admin.md').read_text(encoding='utf-8'),extensions=['fenced_code','tables'])
-admin_body=admin_body.replace('href="../index.html"','href="index.html"')
-admin_page=template.replace('NAV','<a href="index.html">사용자 안내로 돌아가기</a>').replace('SECTIONS','<section class="page active" id="overview">'+admin_body+'</section>')
+admin_nav,admin_body=render(admin_pages)
+admin_page=template.replace('NAV','<a href="index.html">← 사용자 안내</a>'+admin_nav).replace('SECTIONS',admin_body)
 admin_page=admin_page.replace('<strong>클러스터 사용 안내</strong>','<strong>관리자 운영 안내</strong>').replace('접속부터 계산 결과 확인까지, 필요한 순서대로 시작하세요.','계정·계산 노드·공유 저장소를 운영하는 담당자를 위한 안내입니다.')
 (root/'admin.html').write_text(admin_page,encoding='utf-8')
 print('Built customer guide and separate administrator guide')

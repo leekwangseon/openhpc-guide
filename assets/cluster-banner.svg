@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="480" viewBox="0 0 1600 480" role="img" aria-labelledby="title desc">
+  <title id="title">Your Cluster. Made Simple.</title>
+  <desc id="desc">OpenHPC guides for users and administrators, illustrated with connected servers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1b30"/><stop offset="1" stop-color="#153c59"/></linearGradient>
+    <linearGradient id="rack" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#254e6c"/><stop offset="1" stop-color="#132f49"/></linearGradient>
+    <linearGradient id="accent"><stop stop-color="#54e0d0"/><stop offset="1" stop-color="#66bfff"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#3c9cbe" stop-opacity=".23"/><stop offset="1" stop-color="#3c9cbe" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#98c9df" stroke-opacity=".045"/></pattern>
+    <g id="unit"><rect width="150" height="43" rx="7" fill="#0d263e" stroke="#6d9db6" stroke-opacity=".32"/><rect x="14" y="13" width="56" height="4" rx="2" fill="#426681"/><rect x="14" y="24" width="37" height="4" rx="2" fill="#34556e"/><circle cx="119" cy="21" r="4" fill="#58ddc4"/><circle cx="133" cy="21" r="3" fill="#6d93ad"/></g>
+  </defs>
+  <rect width="1600" height="480" rx="22" fill="url(#bg)"/>
+  <rect width="1600" height="480" rx="22" fill="url(#grid)"/>
+  <ellipse cx="1210" cy="240" rx="410" ry="310" fill="url(#glow)"/>
+  <path d="M0 450H1600" stroke="#4fd9cc" stroke-opacity=".12"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="74" y="78" width="38" height="4" rx="2" fill="url(#accent)"/>
+    <text x="128" y="87" fill="#9bc6dc" font-size="17" font-weight="700" letter-spacing="3">OPENHPC GUIDES</text>
+    <text x="74" y="195" fill="#f5f9ff" font-size="64" font-weight="700" letter-spacing="-2">Your Cluster.</text>
+    <text x="74" y="271" fill="#72e0d2" font-size="64" font-weight="700" letter-spacing="-2">Made Simple.</text>
+    <text x="78" y="329" fill="#b5cadd" font-size="23">Connect. Run. Discover.</text>
+    <text x="78" y="407" fill="#8faec5" font-size="15" letter-spacing="1.8">FOR USERS &amp; ADMINISTRATORS</text>
+  </g>
+  <g fill="none" stroke="#65d9d2" stroke-width="2" stroke-opacity=".55">
+    <path d="M965 289V365H1390V289"/><path d="M1178 310V365"/>
+    <path d="M1178 365V408"/><path d="M1060 408H1295"/>
+  </g>
+  <g transform="translate(878 130)">
+    <rect width="174" height="175" rx="13" fill="url(#rack)" stroke="#6b98b3" stroke-opacity=".45"/>
+    <use href="#unit" x="12" y="14"/><use href="#unit" x="12" y="66"/><use href="#unit" x="12" y="118"/>
+  </g>
+  <g transform="translate(1303 130)">
+    <rect width="174" height="175" rx="13" fill="url(#rack)" stroke="#6b98b3" stroke-opacity=".45"/>
+    <use href="#unit" x="12" y="14"/><use href="#unit" x="12" y="66"/><use href="#unit" x="12" y="118"/>
+  </g>
+  <g transform="translate(1080 94)">
+    <rect x="-7" y="-7" width="210" height="252" rx="19" fill="#54dace" opacity=".045"/>
+    <rect width="196" height="238" rx="15" fill="url(#rack)" stroke="#87d9de" stroke-opacity=".8"/>
+    <rect x="19" y="16" width="158" height="30" rx="5" fill="#163a54"/>
+    <circle cx="34" cy="31" r="4" fill="#6de2cd"/>
+    <path d="M47 31H88" stroke="#85b5ca" stroke-width="3" stroke-linecap="round"/>
+    <use href="#unit" x="23" y="61"/><use href="#unit" x="23" y="115"/><use href="#unit" x="23" y="169"/>
+  </g>
+  <circle cx="965" cy="365" r="5" fill="#74e0d4"/>
+  <circle cx="1178" cy="365" r="7" fill="#80e6d9"/>
+  <circle cx="1390" cy="365" r="5" fill="#74e0d4"/>
+  <circle cx="1060" cy="408" r="4" fill="#69b9d7"/>
+  <circle cx="1295" cy="408" r="4" fill="#69b9d7"/>
+</svg>

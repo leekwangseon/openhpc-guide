@@ -4,16 +4,30 @@
 <style>
 :root{--navy:#132b45;--ink:#192c3e;--blue:#096baf;--line:#dce3eb;--muted:#536678}
 *{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f4f7fb;font:16px/1.8 system-ui,-apple-system,"Malgun Gothic",sans-serif}
-header{background:var(--navy);color:white;padding:27px 38px}header strong{display:block;font-size:25px;letter-spacing:-.6px}header p{margin:4px 0 0;color:#cbd9e9;font-size:14px}
+header{background:var(--navy);color:white;padding:27px 38px}header strong{display:block;font-size:25px;letter-spacing:-.6px}header p{margin:4px 0 0;color:#cbd9e9;font-size:14px}.chapter-toc{border:1px solid var(--line);border-radius:7px;padding:12px 18px;margin:18px 0 28px;background:#f8fafc}.chapter-toc summary{cursor:pointer;font-weight:600}.chapter-toc ul{font-size:14px}
 .layout{display:grid;grid-template-columns:220px minmax(0,1fr);max-width:1360px;margin:auto}nav{padding:28px 18px;position:sticky;top:0;height:100vh;overflow:auto}nav a{display:block;padding:9px 14px;margin:4px 0;border-radius:7px;text-decoration:none;color:var(--ink)}nav a[aria-current="page"]{background:var(--navy);color:#fff}nav button{margin:20px 12px;padding:8px 12px;background:white;border:1px solid var(--line);border-radius:5px;cursor:pointer}
 main{background:white;padding:30px 46px 70px;min-width:0}.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 28px}.card{display:block;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:22px;color:var(--ink);background:#f8fafc}.card:hover{border-color:var(--blue);background:#eef6fc}.card strong{display:block;font-size:19px;margin-bottom:8px}.card span{font-size:14px;color:var(--muted)}.page{margin-bottom:60px}body.js .page{display:none}body.js .page.active{display:block}h1{font-size:29px;line-height:1.4;margin:8px 0 24px}h2{font-size:22px;margin:34px 0 14px;padding-top:12px;border-top:1px solid var(--line)}h3{font-size:18px;margin-top:28px}p{margin:13px 0}a{color:var(--blue);text-underline-offset:3px}li{margin:6px 0}table{border-collapse:collapse;width:100%;font-size:14px;margin:20px 0;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:10px 12px;vertical-align:top;text-align:left}th{background:#eef3f8}code{font:14px/1.6 Consolas,monospace;background:#eef3f8;border-radius:3px;padding:2px 4px}pre{background:#122537;color:#eff6ff;padding:18px 20px;border-radius:8px;overflow:auto;font:14px/1.7 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}footer{margin-top:36px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
 @media(max-width:800px){header{padding:22px}header strong{font-size:21px}.layout{display:block}.cards{grid-template-columns:1fr}nav{position:static;height:auto;padding:12px;display:flex;flex-wrap:wrap}nav a{padding:5px 10px;font-size:14px}nav button{margin:4px 10px}main{padding:22px}h1{font-size:25px}}
 @media print{body{background:white;font-size:10pt;color:#111}header{background:white;color:#111;padding:0 0 16px}header p{color:#444}.layout{display:block}nav{display:none}main{padding:0}body.js .page{display:block!important;break-before:page}.page:first-child{break-before:auto}h1,h2,h3{break-after:avoid}pre{color:#111;background:#f3f3f3;border:1px solid #ccc;font-size:9pt}table{display:table;font-size:9pt}tr{break-inside:avoid}a{color:#111}footer{display:none}@page{size:A4;margin:18mm}}
 </style></head><body>
 <header><strong>관리자 운영 안내</strong><p>계정·계산 노드·공유 저장소를 운영하는 담당자를 위한 안내입니다.</p></header>
-<div class="layout"><nav aria-label="사용 안내"><a href="index.html">사용자 안내로 돌아가기</a><button onclick="window.print()" type="button">사용 안내 인쇄</button></nav><main><section class="page active" id="overview"><h1>관리자 운영 안내</h1>
+<div class="layout"><nav aria-label="사용 안내"><a href="index.html">← 사용자 안내</a><a href="#overview" data-section="overview">운영 개요</a><a href="#accounts" data-section="accounts">계정·동기화</a><a href="#apps" data-section="apps">프로그램·이미지</a><a href="#nfs" data-section="nfs">NFS 공유 추가</a><a href="#python" data-section="python">공유 Python·Module</a><a href="#nodes" data-section="nodes">노드 추가·교체</a><a href="#network" data-section="network">마스터 IP·이름 변경</a><a href="#power" data-section="power">IPMI·RACADM·전원</a><button onclick="window.print()" type="button">사용 안내 인쇄</button></nav><main><section id="overview" class="page" aria-label="운영 개요"><h1 id="overview-_1">관리자 운영 안내</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#overview-_1">관리자 운영 안내</a><ul>
+<li><a href="#overview-_2">일상 점검</a></li>
+<li><a href="#overview-_3">사용자 계정</a></li>
+<li><a href="#overview-_4">프로그램·라이브러리 추가</a></li>
+<li><a href="#overview-_5">공유 저장소</a></li>
+<li><a href="#overview-_6">재부팅과 유지보수</a></li>
+<li><a href="#overview-_7">장애 확인 순서</a></li>
+<li><a href="#overview-_8">운영 기록과 지원 요청</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
 <p>계정·계산 노드·공유 저장소를 관리하는 담당자를 위한 문서입니다. 일반적인 접속과 계산 방법은 <a href="index.html">사용자 안내</a>에서 확인할 수 있습니다.</p>
-<h2>일상 점검</h2>
+<h2 id="overview-_2">일상 점검</h2>
 <table>
 <thead>
 <tr>
@@ -53,11 +67,11 @@ findmnt -t nfs,nfs4
 systemctl --failed
 </code></pre>
 <p>서비스가 실행 중이라는 표시만으로 전체 상태를 판단하지 않습니다. 개인 사용자 계정의 접속·파일 쓰기·작은 계산까지 확인합니다. BMC 전원 On과 OS 부팅 성공도 구분합니다.</p>
-<h2>사용자 계정</h2>
+<h2 id="overview-_3">사용자 계정</h2>
 <p>사용자 추가 전 UID/GID 충돌, 프로젝트 그룹, 사용 기간, 저장 공간·quota를 확인합니다. 실제 인증 체계에 맞춰 계정을 생성하고 계산 노드의 계정 매핑과 인증도 반영합니다.</p>
 <p>추가 후에는 해당 사용자의 접속·공유 경로 쓰기·프로그램 실행을 시험합니다. 비밀번호나 개인 SSH 비밀키를 공용 설정 파일에 넣지 않습니다.</p>
 <p>계정 사용 종료 시 모든 인증 경로와 실행 중 작업을 확인합니다. 계정 비활성화와 홈·프로젝트 데이터 삭제는 분리하여 처리하고 보존 정책·소유자 확인을 거칩니다.</p>
-<h2>프로그램·라이브러리 추가</h2>
+<h2 id="overview-_4">프로그램·라이브러리 추가</h2>
 <p>공용 응용프로그램은 모든 대상 노드가 같은 경로로 사용할 수 있도록 구성합니다. OS 라이브러리는 필요한 로그인 서버와 계산 노드 이미지에 각각 반영합니다.</p>
 <p>RAM 기반 계산 노드에서는 실행 중인 노드에만 설치한 변경이 재부팅 후 사라질 수 있습니다. 영구 이미지·overlay·구성 관리 대상도 함께 갱신해야 합니다.</p>
 <ol>
@@ -69,14 +83,14 @@ systemctl --failed
 <li>정상 확인 후 나머지 노드에 적용합니다.</li>
 </ol>
 <p>Warewulf 3의 <code>wwsh</code>·<code>wwvnfs</code>와 Warewulf 4의 <code>wwctl</code>은 관리 방식이 다릅니다. 다른 버전의 명령을 그대로 혼용하지 않습니다. 커널·GPU·RDMA 변경은 제품이 지원하는 조합을 먼저 확인합니다.</p>
-<h2>공유 저장소</h2>
+<h2 id="overview-_5">공유 저장소</h2>
 <p>NFS 공유 대상은 필요한 호스트·관리망으로 제한하고 기본적으로 root_squash를 유지합니다. 공유 경로·사용자 그룹·읽기/쓰기·quota 정책을 함께 확인합니다.</p>
 <p>공유 설정 변경 후 서버의 exports와 클라이언트의 실제 마운트를 확인하고, 일반 사용자로 파일 생성·읽기를 시험합니다. 마운트 변경도 영구 계산 노드 구성에 반영해야 합니다.</p>
-<h2>재부팅과 유지보수</h2>
+<h2 id="overview-_6">재부팅과 유지보수</h2>
 <p>사용자와 점검 시간을 조정하고 새 작업이 시작되지 않도록 한 뒤 실행 중 작업을 확인합니다. 직접 실행 환경에서는 <code>w</code>나 <code>squeue</code>만으로 작업이 없다고 판단하지 않습니다. 실제 프로세스·응용프로그램 상태와 예약 기록을 함께 확인합니다.</p>
 <p>Slurm을 사용하는 노드는 현장 절차에 따라 새 작업을 차단하고 작업 종료를 기다립니다. 직접 실행과 병행한다면 직접 작업도 따로 확인해야 합니다. 정상 종료·재부팅을 우선하고, 복귀 후 사용자 작업이 가능한지 검증합니다.</p>
 <p>전체 정지·기동은 저장소와 핵심 서비스의 의존 관계에 따라 수행합니다. 현장의 인수 자료에 기재된 순서와 복구 절차를 사용하세요.</p>
-<h2>장애 확인 순서</h2>
+<h2 id="overview-_7">장애 확인 순서</h2>
 <table>
 <thead>
 <tr>
@@ -104,11 +118,436 @@ systemctl --failed
 </tbody>
 </table>
 <p>과거 하드웨어 이벤트와 현재 오류를 구분하여 기록합니다. 반복적인 전원 조작이나 설정 초기화보다 발생 시각·대상 노드·로그·재현 조건을 먼저 확보합니다.</p>
-<h2>운영 기록과 지원 요청</h2>
+<h2 id="overview-_8">운영 기록과 지원 요청</h2>
 <p>현장 구성표에 소프트웨어 버전, 이미지·노드 대응, 공유 경로, 인증 방식, 서비스·로그 위치, 변경 내역과 복구 절차를 유지합니다. 접속 인증 정보는 승인된 별도 방식으로 보관합니다.</p>
-<p>지원 요청 시에는 영향 범위, 시작 시각, 변경 이력, 오류 메시지, 지금까지 확인한 내용을 함께 전달합니다. 사용자 데이터나 인증 정보를 로그에 포함해야 하는 경우 먼저 전달 범위를 확인합니다.</p></section><footer>접속 정보와 장비별 사용 정책은 담당자에게 받은 안내를 확인해 주세요. · <a href="admin.html">관리자 운영 안내</a></footer></main></div>
+<p>지원 요청 시에는 영향 범위, 시작 시각, 변경 이력, 오류 메시지, 지금까지 확인한 내용을 함께 전달합니다. 사용자 데이터나 인증 정보를 로그에 포함해야 하는 경우 먼저 전달 범위를 확인합니다.</p></section>
+<section id="accounts" class="page" aria-label="계정·동기화"><h1 id="accounts-_1">사용자 계정 추가·동기화·제거</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#accounts-_1">사용자 계정 추가·동기화·제거</a><ul>
+<li><a href="#accounts-1">1. 추가 전 확인</a></li>
+<li><a href="#accounts-2">2. 로컬 사용자 예제</a></li>
+<li><a href="#accounts-3">3. 계산 노드 계정 매핑</a></li>
+<li><a href="#accounts-4">4. 인수 시험</a></li>
+<li><a href="#accounts-5">5. 계정 비활성화와 제거</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>이 장의 변경 명령은 관리 노드에서 권한 있는 담당자가 실행합니다. 로컬 파일 기반과 LDAP/AD/SSSD 같은 중앙 인증 방식을 구분합니다. 아래 예제의 <code>YOUR_*</code>는 승인된 실제 값으로 바꿉니다.</p>
+<h2 id="accounts-1">1. 추가 전 확인</h2>
+<p>사용자명·UID·기본 그룹·보조 그룹·사용 기간·프로젝트·저장 공간을 승인받습니다. 모든 노드와 저장소에서 UID/GID가 일관되어야 합니다.</p>
+<pre><code class="language-bash">getent passwd YOUR_USER
+getent passwd YOUR_UID
+getent group YOUR_GROUP
+</code></pre>
+<p>이미 있는 사용자·UID·그룹을 덮어쓰지 않습니다. 중앙 인증 사용자는 디렉터리 서비스에서 관리하고 동일 이름의 로컬 계정을 임의로 만들지 않습니다.</p>
+<h2 id="accounts-2">2. 로컬 사용자 예제</h2>
+<p>기본 그룹이 준비된 경우:</p>
+<pre><code class="language-bash">useradd -m -u YOUR_UID -g YOUR_GROUP -s /bin/bash YOUR_USER
+passwd YOUR_USER
+id YOUR_USER
+getent passwd YOUR_USER
+</code></pre>
+<p>기본 그룹도 새로 만들 필요가 있으면 승인된 미사용 GID로 <code>groupadd -g YOUR_GID YOUR_GROUP</code>을 먼저 수행합니다. 비밀번호는 프롬프트나 승인된 초기 인증 전달 방식으로 설정합니다. 공용 문서·명령 인수에 비밀번호를 넣지 않습니다.</p>
+<h2 id="accounts-3">3. 계산 노드 계정 매핑</h2>
+<p>인증 방식에 맞춰 passwd/group의 사용자 매핑, SSH 공개키·인증 서비스·PAM 정책, 홈 마운트와 그룹 권한을 반영합니다. 마스터의 시스템 계정 파일을 통째로 덮어쓰면 이미지의 서비스 UID/GID와 충돌할 수 있습니다. 신규 계정만 반영하거나 충돌을 검증한 관리 파일을 사용합니다.</p>
+<p>Warewulf 3에서 <strong>이미 등록·할당된 배포 파일</strong>을 갱신하는 형태입니다. 먼저 파일 목록과 각 노드 배포 대상을 확인합니다.</p>
+<pre><code class="language-bash">wwsh file list
+wwsh provision print YOUR_NODE
+wwsh file resync
+</code></pre>
+<p><code>resync</code>가 어떤 등록 파일을 갱신하는지 먼저 검토합니다. <code>shadow</code>·<code>gshadow</code>·비밀키를 무조건 배포하는 절차로 사용하지 않습니다. 이미지의 재부팅 후 상태와 실행 중 노드의 갱신을 따로 확인합니다. 현장에 wwgetfiles가 구성된 경우 갱신 주기를 기다리거나 승인된 수동 갱신 절차를 사용합니다. 캐시 디렉터리의 무차별 삭제는 기본 절차로 넣지 않습니다.</p>
+<p>여러 노드 조회에 pdsh가 제공되는 경우:</p>
+<pre><code class="language-bash">pdsh -R ssh -w 'YOUR_APPROVED_NODE_RANGE' 'hostname; getent passwd YOUR_USER'
+</code></pre>
+<p>호스트 범위 확장 형식과 실제 대상 목록을 확인합니다. root 키의 호스트 검증을 끄거나 관리자 비밀키를 노드에 배포하지 않습니다. Warewulf 4는 해당 버전의 syncuser·overlay 관리 방식을 사용합니다.</p>
+<h2 id="accounts-4">4. 인수 시험</h2>
+<p>해당 사용자로 실제 로그인·계산 노드 접근·공유 폴더 생성·파일 소유권·그룹 공유·프로그램 실행을 확인합니다. Slurm 회계를 쓰면 사용자·Account·Association·허용 QoS도 별도로 등록·검증합니다. OS 계정 생성만으로 Slurm 프로젝트 권한이 자동 생성된다고 가정하지 않습니다.</p>
+<h2 id="accounts-5">5. 계정 비활성화와 제거</h2>
+<p>실행 중 직접 작업·Slurm 작업, 공동 프로젝트 파일·예약·자동 실행을 조사합니다. 승인에 따라 비밀번호·SSH 키·중앙 인증·접속 정책 등 실제 인증 경로를 차단합니다. <code>usermod -L</code> 같은 비밀번호 잠금만으로 키 로그인까지 막히는 것은 아닙니다.</p>
+<p>보존 정책과 인수인계를 확인한 후 로컬 계정을 제거하는 형태입니다.</p>
+<pre><code class="language-bash">userdel YOUR_USER
+</code></pre>
+<p>이 예제는 홈 삭제 옵션을 사용하지 않습니다. 사용자 데이터 삭제·소유권 이전·UID 재사용은 별도 판단·승인 후 수행합니다. 계산 노드·이미지·인증 서비스·Slurm의 관련 권한도 동기화하고 재로그인·재부팅 후 상태를 확인합니다.</p></section>
+<section id="apps" class="page" aria-label="프로그램·이미지"><h1 id="apps-_1">계산 노드 프로그램·이미지 변경</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#apps-_1">계산 노드 프로그램·이미지 변경</a><ul>
+<li><a href="#apps-1">1. 변경 위치 결정</a></li>
+<li><a href="#apps-2">2. 버전·대상·복구 준비</a></li>
+<li><a href="#apps-3-warewulf-3-el8">3. Warewulf 3 + EL8 패키지 설치 형태</a></li>
+<li><a href="#apps-4">4. 실행 중 노드 반영</a></li>
+<li><a href="#apps-5">5. 배포 검증</a></li>
+<li><a href="#apps-6-module">6. 공용 응용프로그램과 Module</a></li>
+<li><a href="#apps-7">7. 실패 시 복구</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<h2 id="apps-1">1. 변경 위치 결정</h2>
+<p>공유 프로그램 설치와 OS 라이브러리 설치를 구분합니다. 응용프로그램은 승인된 공유 트리에 버전별로 설치할 수 있고, OS 패키지는 계산 노드 이미지에도 있어야 합니다. GPU·RDMA 드라이버와 커널은 지원 조합을 확인합니다.</p>
+<p>실행 중 노드가 RAM 기반이면 개별 설치는 재부팅 후 사라질 수 있습니다. 노드에 yum/dnf가 아예 없는 구성도 있으므로 “pdsh로 yum install”을 모든 환경에 적용하지 않습니다.</p>
+<h2 id="apps-2">2. 버전·대상·복구 준비</h2>
+<p>OS·Warewulf·이미지·커널·서비스·저장소 버전과 적용 대상을 기록합니다. 현재 설정과 승인된 범위의 이전 이미지·구성을 보관하고 돌아갈 버전을 정합니다. 전체 OS 이미지나 사용자 데이터를 복사할 권한은 설정 보관 권한과 별도로 확인합니다.</p>
+<h2 id="apps-3-warewulf-3-el8">3. Warewulf 3 + EL8 패키지 설치 형태</h2>
+<p>아래는 기존 이미지 디렉터리를 정확히 확인한 경우의 예입니다. CentOS 7의 yum 예제는 해당 레거시 환경에만 적용하며 OS8·9·10 저장소와 섞지 않습니다.</p>
+<pre><code class="language-bash">IMAGE=/YOUR_CONFIRMED_IMAGE_PATH
+test -d &quot;$IMAGE/etc&quot;
+cat &quot;$IMAGE/etc/os-release&quot;
+dnf --installroot=&quot;$IMAGE&quot; --releasever=8 install YOUR_APPROVED_PACKAGE
+wwvnfs --chroot=&quot;$IMAGE&quot;
+wwsh vnfs list
+</code></pre>
+<p>각 명령 성공을 확인한 후 다음 단계로 진행합니다. 저장소·서명 확인·플랫폼·의존성·서비스 스크립트 오류를 해결하지 않은 채 강제 옵션으로 넘기지 않습니다. 관리 노드에도 필요한 패키지가 있으면 별도 설치합니다.</p>
+<p>Warewulf 4는 image build/exec/shell과 overlay 방식이 다르므로 설치 버전의 <code>wwctl</code> 도움말과 공식 운영서를 사용합니다. 이 장의 wwvnfs를 대체 명령처럼 혼용하지 않습니다.</p>
+<h2 id="apps-4">4. 실행 중 노드 반영</h2>
+<p>노드에 패키지 관리자가 있고 온라인 변경이 승인된 경우에만 같은 패키지 구성을 적용합니다. 대규모 동시 실행보다 한 노드부터 확인합니다. 이미지와 실행 중 노드의 상태가 달라지지 않도록 기록합니다.</p>
+<p>온라인 설치가 불가능하거나 커널·서비스 변경이면 정상 재부팅으로 새 이미지를 적용합니다. 새 작업 차단 → 기존 직접·스케줄러 작업 확인 → 정상 종료·재부팅 → 검증 → 사용 재개 순서로 진행합니다. 일괄 강제 재부팅을 기본 예제로 사용하지 않습니다.</p>
+<h2 id="apps-5">5. 배포 검증</h2>
+<pre><code class="language-bash">rpm -q YOUR_APPROVED_PACKAGE
+hostname
+uname -r
+findmnt -t nfs,nfs4
+systemctl --failed
+</code></pre>
+<p>관리 노드·이미지의 패키지 목록과 노드의 실제 버전을 비교합니다. 프로그램은 일반 사용자로 단일 노드 → 필요한 멀티노드·IB → 라이선스 시험을 수행합니다. 재부팅 후에도 설치가 유지되는지 확인합니다.</p>
+<h2 id="apps-6-module">6. 공용 응용프로그램과 Module</h2>
+<p>버전별 경로에 설치하고 기존 정상 버전을 유지합니다. Module로 새 버전을 선택하게 하며 전체 사용자의 기본값 변경은 검증 후 공지합니다. MPI·컴파일러·GPU 런타임을 함께 시험합니다. ANSYS 등 상용 제품은 설치 경로·라이선스·제공 MPI·Slurm 연동을 제품 담당자와 확정합니다.</p>
+<h2 id="apps-7">7. 실패 시 복구</h2>
+<p>시험 노드를 사용 제외하고 실패 로그·버전·변경 내용을 보관합니다. 승인된 이전 이미지·overlay·패키지 구성으로 돌린 뒤 대표 노드를 먼저 검증합니다. 결과를 확인하기 전 다른 노드로 확대하지 않습니다. 변경과 복구 모두 사용자에게 영향 범위와 상태를 알립니다.</p></section>
+<section id="nfs" class="page" aria-label="NFS 공유 추가"><h1 id="nfs-nfs">NFS 공유 저장소 추가</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#nfs">NFS 공유 저장소 추가</a><ul>
+<li><a href="#nfs-1">1. 서버·클라이언트 현재 상태</a></li>
+<li><a href="#nfs-2">2. 공유 정책과 서버 반영</a></li>
+<li><a href="#nfs-3">3. 클라이언트 영구 마운트</a></li>
+<li><a href="#nfs-4">4. 이미지 재생성과 시험 노드</a></li>
+<li><a href="#nfs-5">5. 문제 해결</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>스토리지 연결·파일시스템 생성과 NFS 공유 추가는 다른 작업입니다. 이 장은 <strong>이미 준비되고 보존 범위가 확인된 파일시스템</strong>을 공유하는 절차이며 디스크 초기화 명령을 포함하지 않습니다.</p>
+<h2 id="nfs-1">1. 서버·클라이언트 현재 상태</h2>
+<pre><code class="language-bash">findmnt
+df -hT
+cat /etc/exports
+exportfs -v
+</code></pre>
+<p>대상 장치·UUID·마운트 경로·소유권·서비스 사용자·프로토콜·클라이언트 범위를 확인합니다. 데이터가 있는 마운트가 빠진 상태에서 빈 디렉터리를 공유하거나 그곳에 결과를 쓰지 않도록 주의합니다.</p>
+<p>클라이언트에서는 <code>findmnt -t nfs,nfs4</code>, <code>df -hT</code>를 확인합니다. pdsh가 제공되면 승인된 노드 범위로 읽기 전용 조회를 먼저 수행합니다.</p>
+<h2 id="nfs-2">2. 공유 정책과 서버 반영</h2>
+<p>호스트·망 범위를 최소화하고 읽기/쓰기·root_squash·그룹 권한을 정합니다. 아래 주소는 문서 예시용이며 현장 값이 아닙니다.</p>
+<pre><code class="language-text">/srv/projects 192.0.2.21(rw,sync,root_squash,no_subtree_check)
+</code></pre>
+<p><code>/etc/exports.d</code> 사용 가능 여부를 확인하고 전용 <code>.exports</code> 파일로 관리하거나 기존 exports를 승인된 방식으로 수정합니다. 무조건 <code>echo &gt;&gt;</code>를 반복해 중복 행을 만들지 않습니다. 변경 전 파일 사본을 보관합니다.</p>
+<pre><code class="language-bash">exportfs -ra
+exportfs -v
+</code></pre>
+<p>서버·방화벽에서 실제 NFS 버전의 요구 사항을 확인합니다. 전체 서버 재시작이 필요한지 판단하고 활성 작업의 영향을 검토합니다. 클라이언트 root 쓰기 실패만으로 no_root_squash를 적용하지 않습니다.</p>
+<h2 id="nfs-3">3. 클라이언트 영구 마운트</h2>
+<p>새 마운트 지점을 이미지·overlay·구성 관리에 생성하고 fstab 등의 영구 설정을 반영합니다. 예제의 서버명과 경로를 실제 값으로 바꾸고 사용하는 NFS 버전을 검증합니다.</p>
+<pre><code class="language-text">YOUR_NFS_SERVER:/srv/projects /projects nfs vers=4.1,_netdev 0 0
+</code></pre>
+<p>실제 필요에 따라 ro/rw·nodev·nosuid 등 옵션을 정합니다. 배포 도구가 fstab을 생성한다면 수동 수정이 덮어써지지 않도록 생성 원본을 수정합니다. 임의의 작은 rsize/wsize를 과거 문서에서 그대로 가져오지 않습니다.</p>
+<h2 id="nfs-4">4. 이미지 재생성과 시험 노드</h2>
+<p>Warewulf 3이면 승인된 이미지 변경 후 <code>wwvnfs --chroot=YOUR_IMAGE_PATH</code>를 실행하고 성공을 확인합니다. Warewulf 4는 이미지·overlay 빌드를 버전에 맞게 수행합니다.</p>
+<p>작업을 비운 시험 노드에서 적용하고 다음을 확인합니다.</p>
+<pre><code class="language-bash">findmnt /projects
+df -hT /projects
+ls -ld /projects
+</code></pre>
+<p>일반 사용자로 승인된 하위 폴더에서 생성·읽기·삭제·그룹 공유·소유권을 검증합니다. 모든 노드가 같은 저장소를 보는지와 재부팅 후 마운트도 확인한 뒤 확대 적용합니다.</p>
+<h2 id="nfs-5">5. 문제 해결</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>확인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>접근 거부</td>
+<td>exports의 대상 주소, 서버·클라이언트 이름 해석, 방화벽</td>
+</tr>
+<tr>
+<td>root만 쓰기 실패</td>
+<td>root_squash 정책과 사용자로 수행할 작업인지</td>
+</tr>
+<tr>
+<td>사용자 파일 소유권이 숫자로 보임</td>
+<td>UID/GID·인증·NFS idmapping</td>
+</tr>
+<tr>
+<td>명령이 오래 멈춤</td>
+<td>서버 저장소·네트워크·NFS 응답. 활성 마운트 강제 해제 전 작업 영향 확인</td>
+</tr>
+<tr>
+<td>재부팅 후 마운트 누락</td>
+<td>이미지/overlay/fstab 원본과 부팅 의존성</td>
+</tr>
+</tbody>
+</table>
+<p>저장소 용량·inode·quota·백업 상태도 별개로 확인합니다. 공유 변경이 데이터 백업을 대신하지 않습니다.</p></section>
+<section id="python" class="page" aria-label="공유 Python·Module"><h1 id="python-python-module">공유 Python 설치와 Module 제공</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#python-python-module">공유 Python 설치와 Module 제공</a><ul>
+<li><a href="#python-1">1. 버전·경로·빌드 환경</a></li>
+<li><a href="#python-2">2. 빌드 의존성</a></li>
+<li><a href="#python-3">3. 소스 검증·빌드·설치</a></li>
+<li><a href="#python-4-lua-module">4. Lua Module 파일</a></li>
+<li><a href="#python-5">5. 일반 사용자·노드 검증</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>기존 시스템 Python을 교체하지 않고 버전별 공유 설치본을 제공하는 절차입니다. OS 관리 도구가 사용하는 Python과 연구용 Python을 분리합니다. Conda로 제공할지 소스 빌드할지 먼저 결정합니다.</p>
+<h2 id="python-1">1. 버전·경로·빌드 환경</h2>
+<p>지원 중인 Python 릴리스, 사용하는 OS·OpenSSL·컴파일러와 대상 노드의 CPU 범위를 확인합니다. 오래된 Python 3.5 예제는 현재 기본 설치 기준으로 사용하지 않습니다. 아래의 버전·경로 자리표시는 승인된 값으로 바꿉니다.</p>
+<pre><code class="language-bash">PYVER=YOUR_APPROVED_PYTHON_VERSION
+PREFIX=/YOUR_SHARED_SOFTWARE_ROOT/python/$PYVER
+</code></pre>
+<p>빌드는 부하를 허용한 관리·빌드 서버에서 수행합니다. 특정 CPU의 <code>-march=native</code>로 만든 바이너리가 다른 세대 노드에서 실패하지 않는지 확인합니다. 설치 경로는 기존 버전과 분리합니다.</p>
+<h2 id="python-2">2. 빌드 의존성</h2>
+<p>Enterprise Linux 계열의 패키지 형태입니다. 저장소와 Python 버전에 따라 추가 의존성이 필요할 수 있습니다.</p>
+<pre><code class="language-bash">dnf install gcc make zlib-devel bzip2-devel xz-devel \
+  readline-devel sqlite-devel openssl-devel libffi-devel
+</code></pre>
+<p>Ubuntu·SUSE 등 다른 배포판에는 해당 배포판의 개발 패키지 이름을 사용합니다. OpenSSL·시스템 라이브러리를 전체 노드에서 임의로 교체하지 않습니다.</p>
+<h2 id="python-3">3. 소스 검증·빌드·설치</h2>
+<pre><code class="language-bash">mkdir -p &quot;$HOME/python-build&quot;
+cd &quot;$HOME/python-build&quot;
+curl -fLO &quot;https://www.python.org/ftp/python/$PYVER/Python-$PYVER.tgz&quot;
+sha256sum &quot;Python-$PYVER.tgz&quot;
+</code></pre>
+<p><a href="https://www.python.org/downloads/source/">Python 공식 배포</a>의 체크섬·검증 절차와 비교한 후 압축을 풉니다.</p>
+<pre><code class="language-bash">tar -xzf &quot;Python-$PYVER.tgz&quot;
+cd &quot;Python-$PYVER&quot;
+./configure --prefix=&quot;$PREFIX&quot; --with-ensurepip=install --enable-shared
+make -j2
+make test
+make altinstall
+</code></pre>
+<p>각 단계의 성공을 확인하고 테스트가 실패하면 원인을 검토합니다. 실제 설치 권한은 prefix에만 필요한 범위로 사용합니다. 공유 라이브러리를 사용하면 시험 실행에도 해당 lib 경로가 필요할 수 있습니다. altinstall의 버전 있는 실행파일 이름을 확인하고 시스템 <code>/usr/bin/python*</code> 링크를 바꾸지 않습니다.</p>
+<h2 id="python-4-lua-module">4. Lua Module 파일</h2>
+<p>Lmod가 제공되는 경우의 파일 형태입니다. 실제 설치 경로·버전을 입력해 현장의 모듈 트리에 <code>python/YOUR_VERSION.lua</code>로 저장합니다.</p>
+<pre><code class="language-lua">help([[Shared research Python. Use the versioned executable or a project venv.]])
+whatis(&quot;Name: Python&quot;)
+whatis(&quot;Version: YOUR_VERSION&quot;)
+conflict(&quot;python&quot;)
+local root = &quot;/YOUR_SHARED_SOFTWARE_ROOT/python/YOUR_VERSION&quot;
+prepend_path(&quot;PATH&quot;, pathJoin(root, &quot;bin&quot;))
+prepend_path(&quot;LD_LIBRARY_PATH&quot;, pathJoin(root, &quot;lib&quot;))
+</code></pre>
+<p>현장이 Tcl 기반 Environment Modules를 사용하면 맞는 형식으로 작성합니다. 모듈 파일은 사용자에게 읽혀야 하며 관리자가 수정합니다. 모듈 캐시는 현장의 Lmod 버전과 정책에 따라 갱신하고 다른 사용자의 캐시를 일괄 삭제하지 않습니다.</p>
+<h2 id="python-5">5. 일반 사용자·노드 검증</h2>
+<pre><code class="language-bash">module avail
+module show python/YOUR_VERSION
+module load python/YOUR_VERSION
+command -v YOUR_VERSIONED_PYTHON
+YOUR_VERSIONED_PYTHON --version
+YOUR_VERSIONED_PYTHON -c 'import ssl, sqlite3, bz2, lzma, ctypes; print(ssl.OPENSSL_VERSION)'
+YOUR_VERSIONED_PYTHON -m pip --version
+</code></pre>
+<p>설치된 실제 실행파일 이름으로 바꿉니다. 일반 사용자로 여러 노드에서 같은 버전·동적 라이브러리 로드·패키지 import를 확인합니다. 시스템 Python과 개인 Conda 환경이 바뀌지 않았는지도 확인합니다.</p>
+<p>개인 패키지는 프로젝트 venv 또는 Conda 환경에 설치하게 합니다. 공용 Python에 모든 사용자의 패키지를 즉흥적으로 추가하지 않습니다. 공용 패키지 변경은 버전·환경 파일·시험 결과를 기록하고 이전 정상 버전을 유지합니다.</p></section>
+<section id="nodes" class="page" aria-label="노드 추가·교체"><h1 id="nodes-_1">계산 노드 추가·교체·정보 변경</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#nodes-_1">계산 노드 추가·교체·정보 변경</a><ul>
+<li><a href="#nodes-1">1. 신규·교체 노드 확인표</a></li>
+<li><a href="#nodes-2-warewulf-3">2. Warewulf 3 등록 형태</a></li>
+<li><a href="#nodes-3-dhcppxe">3. DHCP·PXE 반영</a></li>
+<li><a href="#nodes-4">4. 부팅 검증</a></li>
+<li><a href="#nodes-5">5. 스케줄러와 자원 등록</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<h2 id="nodes-1">1. 신규·교체 노드 확인표</h2>
+<p>노드명, 관리 NIC MAC·포트, 관리 IP, 고속망 IP·장치, BMC, CPU·메모리·GPU, UEFI/Legacy·Secure Boot, 부팅 이미지·커널, 로컬 디스크 보존 범위를 확인합니다. MAC과 IP 중복은 기존 노드 통신·DHCP에 영향을 줄 수 있습니다.</p>
+<p>교체 시 기존 노드의 직접 작업·예약·스케줄러 상태를 확인하고 사용 제외합니다. 등록 정보 변경과 로컬 디스크 초기화는 별도 작업입니다. 새 노드 등록만으로 디스크 포맷을 승인한 것으로 보지 않습니다.</p>
+<h2 id="nodes-2-warewulf-3">2. Warewulf 3 등록 형태</h2>
+<p>배포 대상 버전과 옵션은 <code>wwsh</code> 도움말에서 확인합니다. 아래는 기존 이미지·bootstrap을 재사용하는 형태입니다.</p>
+<pre><code class="language-bash">wwsh node list
+wwsh vnfs list
+wwsh bootstrap list
+wwsh file list
+wwsh node new YOUR_NODE --netdev YOUR_MGMT_NIC \
+  --ipaddr=YOUR_MGMT_IP --hwaddr=YOUR_MGMT_MAC \
+  --netmask=YOUR_MGMT_NETMASK --gateway=YOUR_MGMT_GATEWAY
+wwsh provision set YOUR_NODE --vnfs=YOUR_VNFS \
+  --bootstrap=YOUR_BOOTSTRAP --files=YOUR_APPROVED_FILE_LIST
+wwsh node print YOUR_NODE
+wwsh provision print YOUR_NODE
+</code></pre>
+<p>배포 파일 목록에는 실제 인증·네트워크 구성에 필요한 승인 파일만 지정합니다. 과거 예제의 shadow 포함 목록을 그대로 복사하지 않습니다. IB 등 추가 인터페이스는 별도 등록·템플릿 설정으로 반영하고 관리망과 혼동하지 않습니다.</p>
+<p>기존 노드의 NIC 교체·IP 변경은 신규 중복 객체를 만들지 말고 해당 버전의 node set 등 변경 명령을 확인합니다. 수정 전 기존 값을 보관하고 대상 한 대를 다시 조회합니다.</p>
+<h2 id="nodes-3-dhcppxe">3. DHCP·PXE 반영</h2>
+<p>등록 정보를 확인한 뒤 현장의 PXE 설정을 생성합니다.</p>
+<pre><code class="language-bash">wwsh pxe update
+</code></pre>
+<p>DHCP 구성 검증·갱신·서비스 reload/restart는 사용하는 DHCP 서버의 실제 설정에 따라 수행합니다. 관리망 인터페이스와 서비스 범위를 확인하고 외부망에 새 DHCP 서비스를 잘못 제공하지 않습니다. 여러 노드 등록 중 반복 재시작으로 서비스가 실패 상태가 되지 않는지도 확인합니다.</p>
+<p>Warewulf 4는 <code>wwctl</code>의 이미지·노드·프로파일·overlay 절차로 수행합니다. 버전 3 명령을 그대로 적용하지 않습니다.</p>
+<h2 id="nodes-4">4. 부팅 검증</h2>
+<ol>
+<li>PXE할 NIC·UEFI/Legacy·Secure Boot 정책을 확인합니다.</li>
+<li>승인된 정상 기동 또는 1회 부팅 설정으로 대표 노드를 부팅합니다.</li>
+<li>DHCP → bootloader → 커널/initramfs → 이미지 전송 → 초기화 순서의 로그를 확인합니다.</li>
+<li>SSH·계정·IP·IB·시간 동기화·공유 마운트·서비스를 확인합니다.</li>
+<li>일반 사용자 계산·멀티노드·필요한 라이선스 시험을 합니다.</li>
+<li>재부팅해 영구 부팅 경로와 구성이 유지되는지 확인합니다.</li>
+</ol>
+<p>전원 On이나 DHCP 응답만으로 OS 부팅 완료로 표시하지 않습니다. 하드웨어 POST가 길거나 멈춘 경우 BMC 콘솔·이벤트 시각을 함께 확인합니다.</p>
+<h2 id="nodes-5">5. 스케줄러와 자원 등록</h2>
+<p>Slurm 사용 시 노드의 <code>slurmd -C</code> 등으로 실제 CPU 토폴로지·메모리를 확인하고 OS·RAM 루트 여유를 고려해 설정합니다. 새 노드명·NodeAddr·Partition·GRES·인증·회계 필요 사항을 반영하고 시험 작업으로 등록을 검증합니다. 기존 노드와 CPU 세대·GPU·메모리가 다르면 Feature·Partition 등 정책을 검토합니다.</p>
+<p>사용자 안내·모니터링·하드웨어 대응표·예약 체계도 갱신합니다. 교체한 노드의 예전 키·인증 정보는 현장 절차로 회수합니다.</p></section>
+<section id="network" class="page" aria-label="마스터 IP·이름 변경"><h1 id="network-ip">마스터 호스트명·IP 변경</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#network-ip">마스터 호스트명·IP 변경</a><ul>
+<li><a href="#network-1">1. 변경 범위와 복구 경로</a></li>
+<li><a href="#network-2">2. 영향 목록</a></li>
+<li><a href="#network-3">3. 현재 구성 조사</a></li>
+<li><a href="#network-4">4. 적용 순서</a></li>
+<li><a href="#network-5">5. 검증과 복구 기준</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>원격 접속 단절과 전체 노드 부팅·공유 저장소·인증에 영향을 줄 수 있는 작업입니다. 실제 운영망별 변경 계획과 복구 접속 수단을 준비한 후 수행합니다. 이 장은 전체 설정을 일괄 치환하는 스크립트가 아닙니다.</p>
+<h2 id="network-1">1. 변경 범위와 복구 경로</h2>
+<p>외부 접속 IP, 관리망 IP, IB IP, 호스트명·DNS 중 무엇을 바꾸는지 구분합니다. 담당자·점검 시간·주소 할당·DNS·방화벽·중계 서버·허용 목록·복구 콘솔을 확인하고 이전 값을 기록합니다. 현재 작업의 정상 종료 또는 유지 가능 여부를 판단합니다.</p>
+<p>외부 접속 세션 하나만을 유일한 복구 수단으로 두지 않습니다. BMC·직접 콘솔·승인된 관리 경로를 확인합니다. 네트워크 변경만으로 해결되지 않는 라이선스의 host ID·호스트명 종속성도 제품 담당자에게 확인합니다.</p>
+<h2 id="network-2">2. 영향 목록</h2>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>확인할 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS 네트워크</td>
+<td>활성 NIC·연결 프로필·주소·게이트웨이·DNS·정적 경로</td>
+</tr>
+<tr>
+<td>이름 해석</td>
+<td>hostname, hosts, DNS 정방향·필요한 역방향</td>
+</tr>
+<tr>
+<td>배포</td>
+<td>DHCP·TFTP·HTTP·PXE URL·이미지의 관리 서버 참조</td>
+</tr>
+<tr>
+<td>공유 저장소</td>
+<td>exports 허용 대상, 클라이언트 fstab·서버명</td>
+</tr>
+<tr>
+<td>인증·인증서</td>
+<td>SSH 호스트 키 검증, 서비스 이름·인증서 범위</td>
+</tr>
+<tr>
+<td>시간·모니터링</td>
+<td>Chrony/NTP·로그 수집·감시 대상</td>
+</tr>
+<tr>
+<td>스케줄러</td>
+<td>SlurmctldHost·NodeAddr·DB·인증·노드 캐시</td>
+</tr>
+<tr>
+<td>유지보수</td>
+<td>리버스 터널·중계 경로·접근 제한</td>
+</tr>
+<tr>
+<td>응용프로그램</td>
+<td>라이선스 서버·실행 호스트 목록·설정된 통신 IP</td>
+</tr>
+</tbody>
+</table>
+<h2 id="network-3">3. 현재 구성 조사</h2>
+<pre><code class="language-bash">hostnamectl
+ip -br addr
+ip route
+nmcli connection show
+findmnt -t nfs,nfs4
+</code></pre>
+<p>NetworkManager를 사용하지 않는 OS 구성에서는 해당 관리 도구를 확인합니다. 이전 이름을 검색할 때도 경로·검색어를 제한하고 출력에 비밀정보가 포함되지 않는지 확인합니다. <code>/etc</code> 전체를 일괄 sed 치환하지 않습니다.</p>
+<h2 id="network-4">4. 적용 순서</h2>
+<ol>
+<li>설정 보관·복구 수단·서비스 의존 관계와 작업 상태를 확인합니다.</li>
+<li>주소 중복·게이트웨이·DNS·라우팅·방화벽 변경을 준비합니다.</li>
+<li>관리 도구에서 승인된 연결·호스트명 변경을 적용합니다.</li>
+<li>새 세션으로 외부·관리망·필요한 IB 경로를 확인합니다.</li>
+<li>DHCP·PXE·NFS·시간·스케줄러·라이선스 등 관련 설정을 수정합니다.</li>
+<li>이미지·overlay·배포 파일을 갱신하고 대표 노드를 시험합니다.</li>
+<li>사용자 안내·모니터링을 갱신하고 전체 대상 적용을 완료합니다.</li>
+</ol>
+<h2 id="network-5">5. 검증과 복구 기준</h2>
+<p>새 접속, DNS, 노드 부팅, 사용자 인증, 공유 경로, 라이선스, 실제 계산을 확인합니다. 재부팅 후 연결 프로필과 서버 참조가 유지되는지 검증합니다. 예정 시간 내 복구 조건을 충족하지 못하면 준비한 이전 주소·프로필·서비스 설정으로 되돌리고 영향 범위를 확인합니다.</p></section>
+<section id="power" class="page" aria-label="IPMI·RACADM·전원"><h1 id="power-ipmiracadmwol">노드 전원 관리: IPMI·RACADM·WOL</h1><details class="chapter-toc"><summary>이 장의 목차</summary><div class="toc">
+<ul>
+<li><a href="#power-ipmiracadmwol">노드 전원 관리: IPMI·RACADM·WOL</a><ul>
+<li><a href="#power-1-ipmi">1. IPMI 상태 조회</a></li>
+<li><a href="#power-2">2. 정상 종료와 전원 켜기</a></li>
+<li><a href="#power-3-pxe">3. PXE 부팅 대상 확인</a></li>
+<li><a href="#power-4-dell-racadm">4. Dell RACADM</a></li>
+<li><a href="#power-5-wake-on-lan">5. Wake-on-LAN</a></li>
+<li><a href="#power-6">6. 여러 노드 조작</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>전원 조작은 승인된 관리자만 수행합니다. 먼저 대상 노드와 BMC의 대응표를 확인하고 사용자 작업·저장소 쓰기·점검 시간을 검토합니다. 조회 → 정상 종료 → 전원 상태 확인 순서를 기본으로 합니다.</p>
+<h2 id="power-1-ipmi">1. IPMI 상태 조회</h2>
+<p>ipmitool이 제공되고 승인된 BMC 관리망에서 접근하는 경우입니다. <code>-a</code>는 암호 입력을 요청하며 비밀번호를 명령 인수에 넣지 않습니다.</p>
+<pre><code class="language-bash">ipmitool -I lanplus -H YOUR_BMC_HOST -U YOUR_BMC_USER -a chassis power status
+ipmitool -I lanplus -H YOUR_BMC_HOST -U YOUR_BMC_USER -a chassis status
+ipmitool -I lanplus -H YOUR_BMC_HOST -U YOUR_BMC_USER -a sel elist last 10
+</code></pre>
+<p>전원 상태·하드웨어 오류·이벤트 시각을 확인합니다. IPMI망은 일반 사용자에게 공개하지 않습니다.</p>
+<h2 id="power-2">2. 정상 종료와 전원 켜기</h2>
+<p>OS에 접속 가능하면 해당 OS의 정상 종료 절차를 우선합니다. 승인된 대상 한 대에서 수행하는 예입니다.</p>
+<pre><code class="language-bash">ssh YOUR_ADMIN_USER@YOUR_CONFIRMED_NODE 'sudo systemctl poweroff'
+</code></pre>
+<p>OS가 ACPI 종료를 지원하는 경우 IPMI의 soft 요청을 사용할 수 있습니다.</p>
+<pre><code class="language-bash">ipmitool -I lanplus -H YOUR_BMC_HOST -U YOUR_BMC_USER -a chassis power soft
+ipmitool -I lanplus -H YOUR_BMC_HOST -U YOUR_BMC_USER -a chassis power status
+</code></pre>
+<p>종료 완료와 전원 Off를 확인한 뒤 필요한 경우 켭니다.</p>
+<pre><code class="language-bash">ipmitool -I lanplus -H YOUR_BMC_HOST -U YOUR_BMC_USER -a chassis power on
+</code></pre>
+<p><code>off</code>, <code>reset</code>, <code>cycle</code>은 정상 종료와 같지 않습니다. OS 불응 시의 장애 대응 절차에서 데이터 손상 위험과 승인을 확인한 후 사용합니다. 반복 전원 사이클을 원인 조사 대신 수행하지 않습니다.</p>
+<h2 id="power-3-pxe">3. PXE 부팅 대상 확인</h2>
+<pre><code class="language-bash">ipmitool -I lanplus -H YOUR_BMC_HOST -U YOUR_BMC_USER -a chassis bootparam get 5
+</code></pre>
+<p>부팅 장치 변경은 UEFI/Legacy, 1회/영구 적용, PXE할 NIC와 로컬 디스크 보존 범위를 확인합니다. 명령이 성공해도 BMC가 실제 어떤 플래그를 저장했는지 다시 조회합니다. 모든 장비에 같은 raw 명령이나 부팅 옵션을 적용하지 않습니다.</p>
+<h2 id="power-4-dell-racadm">4. Dell RACADM</h2>
+<p>해당 iDRAC 버전에서 지원되는 명령을 확인합니다. SSH 호스트 지문을 검증한 뒤 BMC에 로그인하는 방법은 비밀번호를 명령 인수에 넣는 원격 RACADM보다 노출을 줄일 수 있습니다.</p>
+<pre><code class="language-bash">ssh YOUR_BMC_USER@YOUR_BMC_HOST
+</code></pre>
+<p>BMC SSH 콘솔에서 지원되는 경우:</p>
+<pre><code class="language-text">racadm serveraction powerstatus
+racadm serveraction graceshutdown
+racadm serveraction powerup
+</code></pre>
+<p><code>powerdown</code>·<code>powercycle</code>·<code>hardreset</code> 등은 정상 종료와 다를 수 있으므로 장비 문서와 장애 절차를 확인합니다. chassis 관리 장비는 추가 대상 지정 형식이 다를 수 있습니다.</p>
+<h2 id="power-5-wake-on-lan">5. Wake-on-LAN</h2>
+<p>NIC·BIOS·전원·스위치·네트워크에서 WOL을 지원하고 활성화한 경우에만 사용합니다. 부팅용 OS NIC의 승인된 MAC을 확인하며 BMC MAC과 혼동하지 않습니다.</p>
+<pre><code class="language-bash">wakeonlan YOUR_CONFIRMED_NIC_MAC
+</code></pre>
+<p>브로드캐스트·라우팅과 전원 상태에 따라 도달하지 않을 수 있습니다. 명령을 보냈다는 것만으로 기동 성공을 판단하지 말고 BMC·OS 부팅·서비스를 확인합니다.</p>
+<h2 id="power-6">6. 여러 노드 조작</h2>
+<p>pdsh 등의 도구가 있더라도 먼저 대상 범위의 <code>hostname</code> 같은 읽기 전용 명령으로 대응을 검증합니다. 작업 현황·정상 종료·동시 기동 전력·부팅 서버 부하를 검토하고 작은 묶음으로 적용합니다. 무조건 모든 노드에 강제 종료를 전달하는 예제는 사용하지 않습니다.</p>
+<p>참고: <a href="https://www.dell.com/support/manuals/en-us/poweredge-xe8640/idrac9_7.xx_racadm_pub/serveraction?guid=guid-16197034-e2a3-4174-a96d-7dae9afd66aa">Dell RACADM serveraction</a></p></section><footer>접속 정보와 장비별 사용 정책은 담당자에게 받은 안내를 확인해 주세요. · <a href="admin.html">관리자 운영 안내</a></footer></main></div>
 <script>
 document.body.classList.add('js');
-function show(){let key=location.hash.slice(1)||'overview';if(!document.getElementById(key))key='overview';document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e.id===key));document.querySelectorAll('nav a').forEach(e=>{if(e.dataset.section===key)e.setAttribute('aria-current','page');else e.removeAttribute('aria-current')});document.title=document.querySelector('#'+key+' h1').textContent+' | OpenHPC 가이드';window.scrollTo(0,0)}
+function show(){let target=document.getElementById(decodeURIComponent(location.hash.slice(1)));let page=target?.closest('.page')||document.getElementById('overview');let key=page.id;document.querySelectorAll('.page').forEach(e=>e.classList.toggle('active',e===page));document.querySelectorAll('nav a').forEach(e=>{if(e.dataset.section===key)e.setAttribute('aria-current','page');else e.removeAttribute('aria-current')});document.title=page.querySelector('h1').textContent+' | OpenHPC 가이드';if(target&&target!==page)target.scrollIntoView();else window.scrollTo(0,0)}
 window.addEventListener('hashchange',show);show();
 </script></body></html>
