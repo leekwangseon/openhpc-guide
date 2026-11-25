@@ -11,7 +11,7 @@
     </td>
     <td width="50%" valign="top">
       <h3>🛠 관리자 안내</h3>
-      <p>계정 관리 · 노드 점검 · 프로그램 추가 · 유지보수</p>
+      <p>계정 · 노드 · 프로그램 · 유지보수</p>
       <p><a href="https://leekwangseon.github.io/openhpc-guide/admin.html"><strong>운영 안내 보기 →</strong></a></p>
     </td>
   </tr>
